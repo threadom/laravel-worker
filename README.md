@@ -20,7 +20,7 @@ Worker come with a folders and file architecture for modulable application.
 |    |    +--> model.php
 |    |    +--> seeder.php
 |    |    +--> factory.php
-|    |    +--> controller.php
+|    |    +--> apicontroller.php
 |    |
 |    +--> /submodule_name --view
 |         +--> /queries
@@ -36,8 +36,16 @@ Worker come with a folders and file architecture for modulable application.
 
 usage :
 
-<pre>php worker make:module ModuleName/SubModuleName</pre>
+<pre>php worker make:module ModuleName</pre>
 <pre>php worker make:submodule ModuleName/SubModuleName1 --api</pre>
 <pre>php worker make:submodule ModuleName/SubModuleName2 --view</pre>
 <pre>php worker make:submodule ModuleName/SubModuleName3 --view --model=SubModuleName1</pre>
+
+exemple :
+
+<pre>php worker make:module Article</pre>
+<pre>php worker make:submodule Article/article --api</pre>
+<pre>php worker make:submodule Article/articles --view --model=article</pre>
+
+
 
