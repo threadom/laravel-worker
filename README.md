@@ -8,7 +8,7 @@ The craftman passing from the artisan to the worker.
 
 Worker come with a folders and files structures for modulable application.
 
-## Structures :
+## Structures
 
 <pre>
 /laravel_modules
@@ -36,7 +36,7 @@ Worker come with a folders and files structures for modulable application.
 ...
 </pre>
 
-## Usages :
+## Usages
 
 <pre>php worker make:module ModuleName</pre>
 > Command create necessary files for view into previous api folder of article.
@@ -59,7 +59,7 @@ Worker come with a folders and files structures for modulable application.
 <pre>php worker make:routes</pre>
 > Command create necessary files for view into previous api folder of article.
 
-## Exemples :
+## Exemples
 
 <pre>php worker make:module Article</pre>
 > Command create necessary files for view into previous api folder of article.
@@ -75,3 +75,7 @@ Worker come with a folders and files structures for modulable application.
 
 <pre>php worker make:routes</pre>
 > Command create necessary files for view into previous api folder of article.
+
+## License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
