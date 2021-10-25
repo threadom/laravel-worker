@@ -70,7 +70,5 @@ Worker come with a folders and files structures for modulable application.
 <pre>php worker make:submodule Article/articles --view --model=article</pre>
 > Command create necessary files for view into previous api folder of article.
 
-## anymore :
-
 <pre>php worker make:submodule Article/article --view --model=article</pre>
 > Command create necessary files for view into previous api folder of article.
