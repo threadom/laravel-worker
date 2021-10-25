@@ -50,6 +50,12 @@ Worker come with a folders and files structures for modulable application.
 <pre>php worker make:submodule ModuleName/SubModuleName3 --view --model=SubModuleName1</pre>
 > Command create necessary files for view into previous api folder of article.
 
+<pre>php worker make:route ModuleName</pre>
+
+<pre>php worker make:route ModuleName/SubModuleName</pre>
+
+<pre>php worker make:routes</pre>
+
 ## exemples :
 
 <pre>php worker make:module Article</pre>
@@ -61,7 +67,7 @@ Worker come with a folders and files structures for modulable application.
 <pre>php worker make:submodule Article/articles --view --model=article</pre>
 > Command create necessary files for view into previous api folder of article.
 
-anymore :
+## anymore :
 
 <pre>php worker make:submodule Article/article --view --model=article</pre>
 > Command create necessary files for view into previous api folder of article.
