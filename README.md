@@ -10,22 +10,22 @@ Worker come with a folders and file architecture for modulable application.
 
 /laravel_modules\
 +->/<module_name>\
-|  +->/<submodule_name --api>\
-|  |  +->/queries\
-|  |  |  +-><query_1>.sql\
-|  |  |  +-><query_2>.sql\
-|  |  |  +-><query_3>.sql\
-|  |  +->migation.php\
-|  |  +->model.php\
-|  |  +->seeder.php\
-|  |  +->factory.php\
-|  |  +->controller.php\
-|  +->/<submodule_name --list>\
-|     +->/queries\
-|     |  +-><query_1>.sql\
-|     |  +-><query_2>.sql\
-|     |  +-><query_3>.sql\
-|     +->controller.php\
-|     +->view.blade.php\
-|     +->script.blade.php\
+|    +->/<submodule_name --api>\
+|    |    +->/queries\
+|    |    |    +-><query_1>.sql\
+|    |    |    +-><query_2>.sql\
+|    |    |    +-><query_3>.sql\
+|    |    +->migation.php\
+|    |    +->model.php\
+|    |    +->seeder.php\
+|    |    +->factory.php\
+|    |    +->controller.php\
+|    +->/<submodule_name --list>\
+|         +->/queries\
+|         |    +-><query_1>.sql\
+|         |    +-><query_2>.sql\
+|         |    +-><query_3>.sql\
+|         +->controller.php\
+|         +->view.blade.php\
+|         +->script.blade.php\
 ...
