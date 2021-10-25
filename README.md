@@ -8,7 +8,7 @@ The craftman passing from the artisan to the worker.
 
 Worker come with a folders and files structures for modulable application.
 
-## structures :
+## Structures :
 
 <pre>
 /laravel_modules
@@ -36,7 +36,7 @@ Worker come with a folders and files structures for modulable application.
 ...
 </pre>
 
-## usages :
+## Usages :
 
 <pre>php worker make:module ModuleName</pre>
 > Command create necessary files for view into previous api folder of article.
@@ -59,7 +59,7 @@ Worker come with a folders and files structures for modulable application.
 <pre>php worker make:routes</pre>
 > Command create necessary files for view into previous api folder of article.
 
-## exemples :
+## Exemples :
 
 <pre>php worker make:module Article</pre>
 > Command create necessary files for view into previous api folder of article.
@@ -71,4 +71,7 @@ Worker come with a folders and files structures for modulable application.
 > Command create necessary files for view into previous api folder of article.
 
 <pre>php worker make:submodule Article/article --view --model=article</pre>
+> Command create necessary files for view into previous api folder of article.
+
+<pre>php worker make:routes</pre>
 > Command create necessary files for view into previous api folder of article.
