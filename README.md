@@ -16,11 +16,12 @@ Worker come with a folders and file architecture for modulable application.
 |    |    |    +-> query_1.sql
 |    |    |    +-> query_2.sql
 |    |    |    +-> query_3.sql
-|    |    +--> migation.php
+|    |    +--> migration.php
 |    |    +--> model.php
 |    |    +--> seeder.php
 |    |    +--> factory.php
 |    |    +--> controller.php
+|    |
 |    +--> /submodule_name --view
 |         +--> /queries
 |         |    +--> query_1.sql
@@ -29,5 +30,6 @@ Worker come with a folders and file architecture for modulable application.
 |         +--> controller.php
 |         +--> view.blade.php
 |         +--> script.blade.php
+|
 ...
 </pre>
