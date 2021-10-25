@@ -51,10 +51,13 @@ Worker come with a folders and files structures for modulable application.
 > Command create necessary files for view into previous api folder of article.
 
 <pre>php worker make:route ModuleName</pre>
+> Command create necessary files for view into previous api folder of article.
 
 <pre>php worker make:route ModuleName/SubModuleName</pre>
+> Command create necessary files for view into previous api folder of article.
 
 <pre>php worker make:routes</pre>
+> Command create necessary files for view into previous api folder of article.
 
 ## exemples :
 
