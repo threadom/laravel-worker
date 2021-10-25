@@ -21,7 +21,7 @@ Worker come with a folders and file architecture for modulable application.
 |    |    +--> seeder.php
 |    |    +--> factory.php
 |    |    +--> controller.php
-|    +--> /submodule_name --list
+|    +--> /submodule_name --http
 |         +--> /queries
 |         |    +--> query_1.sql
 |         |    +--> query_2.sql
