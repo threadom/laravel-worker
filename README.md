@@ -33,3 +33,11 @@ Worker come with a folders and file architecture for modulable application.
 |
 ...
 </pre>
+
+usage :
+
+<pre>php worker make:module ModuleName/SubModuleName</pre>
+<pre>php worker make:submodule ModuleName/SubModuleName1 --api</pre>
+<pre>php worker make:submodule ModuleName/SubModuleName2 --view</pre>
+<pre>php worker make:submodule ModuleName/SubModuleName3 --view --model=SubModuleName1</pre>
+
