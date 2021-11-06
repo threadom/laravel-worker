@@ -38,6 +38,8 @@ Worker come with a folders and files structures for modulable application.
 
 ## Usages
 
+> All sucessful commands verify if modules directory exist.
+
 <pre>php worker make:module ModuleName</pre>
 > Command create necessary files for view into previous api folder of article.
 
