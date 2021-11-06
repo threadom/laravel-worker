@@ -20,22 +20,22 @@ Worker come with a new folders and files structures for modulables applications.
     |    |    +-> replace.sql
     |    |    +-> update.sql
     |    |    +-> delete.sql
-    |    +--> &lt;submodule_name&gt;Migration.php
-    |    +--> &lt;submodule_name&gt;Model.php
-    |    +--> &lt;submodule_name&gt;Seeder.php
-    |    +--> &lt;submodule_name&gt;Factory.php
-    |    +--> &lt;submodule_name&gt;APICRUD.php
-    |    +--> &lt;submodule_name&gt;Controller.php
-    |    +--> &lt;submodule_name&gt;View.blade.php
-    |    +--> &lt;submodule_name&gt;Script.ts
+    |    +--> &lt;submodule_name&gt;ObjectMigration.php
+    |    +--> &lt;submodule_name&gt;ObjectModel.php
+    |    +--> &lt;submodule_name&gt;ObjectSeeder.php
+    |    +--> &lt;submodule_name&gt;ObjectFactory.php
+    |    +--> &lt;submodule_name&gt;ObjectAPI.php
+    |    +--> &lt;submodule_name&gt;ObjectController.php
+    |    +--> &lt;submodule_name&gt;ObjectView.blade.php
+    |    +--> &lt;submodule_name&gt;ObjectScript.ts
     |
     +--> /&lt;submodule_name --list&gt;
     |    +--> /queries
-    |    |    +--> query_1.sql
-    |    +--> &lt;submodule_name&gt;APIList.php
-    |    +--> &lt;submodule_name&gt;Controller.php
-    |    +--> &lt;submodule_name&gt;View.blade.php
-    |    +--> &lt;submodule_name&gt;Script.ts
+    |    |    +--> select.sql
+    |    +--> &lt;submodule_name&gt;ListAPI.php
+    |    +--> &lt;submodule_name&gt;ListController.php
+    |    +--> &lt;submodule_name&gt;ListView.blade.php
+    |    +--> &lt;submodule_name&gt;ListScript.ts
 </pre>
 
 ## Usages
@@ -49,11 +49,11 @@ Create folders and files for the submodule. (api and view)
 > <pre>php worker make:submodule ModuleName/SubModuleName1 --object</pre>
 > <pre>php worker make:submodule ModuleName/SubModuleName1 --list</pre>
 
-Create a routing file with entry points for APIs and views of the module and submodules.
-> <pre>php worker make:route ModuleName</pre>
-
 Create a routing file with entry points for APIs and views of every modules and submodules.
 > <pre>php worker make:routes</pre>
+
+Create a routing file with entry points for APIs and views for a module and its submodules.
+> <pre>php worker make:routes ModuleName</pre>
 
 ## Examples
 
@@ -73,14 +73,14 @@ Create a object submodule article in module article
         |    +-> read.sql
         |    +-> update.sql
         |    +-> delete.sql
-        +--> ArticleMigration.php
-        +--> ArticleModel.php
-        +--> ArticleSeeder.php
-        +--> ArticleFactory.php
-        +--> ArticleAPIObject.php
-        +--> ArticleController.php
-        +--> ArticleView.blade.php
-        +--> ArticleScript.ts
+        +--> ArticleObjectMigration.php
+        +--> ArticleObjectModel.php
+        +--> ArticleObjectSeeder.php
+        +--> ArticleObjectFactory.php
+        +--> ArticleObjectAPI.php
+        +--> ArticleObjectController.php
+        +--> ArticleObjectView.blade.php
+        +--> ArticleObjectScript.ts
 </b></pre>
 
 Create a object submodule article in module article
@@ -90,10 +90,10 @@ Create a object submodule article in module article
     +--> /articles
         +--> /queries
         |    +-> select.sql
-        +--> ArticlesAPIList.php
-        +--> ArticlesController.php
-        +--> ArticlesView.blade.php
-        +--> ArticlesScript.ts
+        +--> ArticlesListAPI.php
+        +--> ArticlesListController.php
+        +--> ArticlesListView.blade.php
+        +--> ArticlesListScript.ts
 </b></pre>
 
 > <pre>php worker make:routes</pre>
@@ -106,21 +106,21 @@ Create a object submodule article in module article
         |    +-> read.sql
         |    +-> update.sql
         |    +-> delete.sql
-        +--> ArticleMigration.php
-        +--> ArticleModel.php
-        +--> ArticleSeeder.php
-        +--> ArticleFactory.php
-        +--> ArticleAPIObject.php
-        +--> ArticleController.php
-        +--> ArticleView.blade.php
-        +--> ArticleScript.ts
+        +--> ArticleObjectMigration.php
+        +--> ArticleObjectModel.php
+        +--> ArticleObjectSeeder.php
+        +--> ArticleObjectFactory.php
+        +--> ArticleObjectAPI.php
+        +--> ArticleObjectController.php
+        +--> ArticleObjectView.blade.php
+        +--> ArticleObjectScript.ts
     +--> /articles
         +--> /queries
         |    +-> select.sql
-        +--> ArticlesAPIList.php
-        +--> ArticlesController.php
-        +--> ArticlesView.blade.php
-        +--> ArticlesScript.ts
+        +--> ArticlesListAPI.php
+        +--> ArticlesListController.php
+        +--> ArticlesListView.blade.php
+        +--> ArticlesListScript.ts
 </pre>
 
 ## Deprecated
@@ -135,26 +135,26 @@ Create a object submodule article in module article
     |    |    +-> replace.sql
     |    |    +-> update.sql
     |    |    +-> delete.sql
-    |    +--> &lt;submodule_name&gt;Migration.php
-    |    +--> &lt;submodule_name&gt;Model.php
-    |    +--> &lt;submodule_name&gt;Seeder.php
-    |    +--> &lt;submodule_name&gt;Factory.php
-    |    +--> &lt;submodule_name&gt;APICRUD.php
+    |    +--> &lt;submodule_name&gt;ObjectMigration.php
+    |    +--> &lt;submodule_name&gt;ObjectModel.php
+    |    +--> &lt;submodule_name&gt;ObjectSeeder.php
+    |    +--> &lt;submodule_name&gt;ObjectFactory.php
+    |    +--> &lt;submodule_name&gt;ObjectAPI.php
     |
     +--> /&lt;submodule_name --view --object&gt;
-    |    +--> &lt;submodule_name&gt;Controller.php
-    |    +--> &lt;submodule_name&gt;View.blade.php
-    |    +--> &lt;submodule_name&gt;Script.ts
+    |    +--> &lt;submodule_name&gt;ObjectController.php
+    |    +--> &lt;submodule_name&gt;ObjectView.blade.php
+    |    +--> &lt;submodule_name&gt;ObjectScript.ts
     |
     +--> /&lt;submodule_name --api --list&gt;
     |    +--> /queries
     |    |    +-> select.sql
-    |    +--> &lt;submodule_name&gt;APIList.php
+    |    +--> &lt;submodule_name&gt;ListAPI.php
     |
     +--> /&lt;submodule_name --view --list&gt;
-         +--> &lt;submodule_name&gt;Controller.php
-         +--> &lt;submodule_name&gt;View.blade.php
-         +--> &lt;submodule_name&gt;Script.ts
+         +--> &lt;submodule_name&gt;ListController.php
+         +--> &lt;submodule_name&gt;ListView.blade.php
+         +--> &lt;submodule_name&gt;ListScript.ts
 </pre>
 
 ### Usages
@@ -179,11 +179,11 @@ Create a object api submodule article in module Article
         |    +-> read.sql
         |    +-> update.sql
         |    +-> delete.sql
-        +--> ArticleMigration.php
-        +--> ArticleModel.php
-        +--> ArticleSeeder.php
-        +--> ArticleFactory.php
-        +--> ArticleAPICRUD.php
+        +--> ArticleObjectMigration.php
+        +--> ArticleObjectModel.php
+        +--> ArticleObjectSeeder.php
+        +--> ArticleObjectFactory.php
+        +--> ArticleObjectAPI.php
 </b></pre>
 
 Create a object view submodule article in module Article
@@ -191,9 +191,9 @@ Create a object view submodule article in module Article
 <pre>/modules
 +--> /Article<b>
     +--> /article
-        +--> ArticleController.php
-        +--> ArticleView.blade.php
-        +--> ArticleScript.ts
+        +--> ArticleObjectController.php
+        +--> ArticleObjectView.blade.php
+        +--> ArticleObjectScript.ts
 </b></pre>
 
 ## License
