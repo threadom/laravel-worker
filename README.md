@@ -32,7 +32,7 @@ Worker come with a folders and files structures for modulables applications.
 |         |    +--> query_3.sql
 |         +--> controller.php
 |         +--> view.blade.php
-|         +--> script.blade.php
+|         +--> script.ts
 |
 ...
 </pre>
@@ -42,42 +42,71 @@ Worker come with a folders and files structures for modulables applications.
 > All successful commands verify if modules folder exist.
 
 <pre>php worker make:module ModuleName</pre>
-> Command create necessary folders and files for the module.
+> Create folders and files for the module.
 
 <pre>php worker make:submodule ModuleName/SubModuleName1</pre>
-> Command create necessary folders and files for the submodule. (api and view)
+> Create folders and files for the submodule. (api and view)
 
 <pre>php worker make:submodule ModuleName/SubModuleName2 --api</pre>
-> Command create necessary folders and api files for the submodule.
+> Create folders and "api" files for the submodule.
 
 <pre>php worker make:submodule ModuleName/SubModuleName3 --view</pre>
-> Command create necessary folders and view files for the submodule.
+> Create folders and "view" files for the submodule.
 
 <pre>php worker make:route ModuleName</pre>
-> Command create necessary files for view into previous api folder of article.
+> Create a routing file with entry points for APIs and views of the module and submodules.
 
 <pre>php worker make:route ModuleName/SubModuleName</pre>
-> Command create necessary files for view into previous api folder of article.
+> Create a routing file with entry points for API and view of the submodule.
 
 <pre>php worker make:routes</pre>
-> Command create necessary files for view into previous api folder of article.
+> Create a routing file with entry points for APIs and views of every modules and submodules.
 
 ## Exemples
 
 <pre>php worker make:module Article</pre>
-> Command create necessary files for view into previous api folder of article.
+<pre>
+/laravel_modules
++--> /module_name
+...
+</pre>
 
 <pre>php worker make:submodule Article/article --api</pre>
-> Command create necessary files for view into previous api folder of article.
+<pre>
+/laravel_modules
++--> /module_name
+    +--> /submodule_name --api
+        +--> /queries
+        |    +-> create.sql
+        |    +-> update.sql
+        |    +-> delete.sql
+        |    +-> read.sql
+        +--> migration.php
+        +--> model.php
+        +--> seeder.php
+        +--> factory.php
+        +--> apicontroller.php
+...
+</pre>
 
-<pre>php worker make:submodule Article/articles --view --model=article</pre>
-> Command create necessary files for view into previous api folder of article.
+<pre>php worker make:submodule Article/articles --view</pre>
+<pre>
+/laravel_modules
++--> /module_name
+    +--> /submodule_name --api
+        +--> /queries
+        |    +-> query_1.sql
+        +--> controller.php
+        +--> view.blade.php
+        +--> script.ts
+...
+</pre>
 
 <pre>php worker make:submodule Article/article --view --model=article</pre>
-> Command create necessary files for view into previous api folder of article.
+> Create files for view into previous api folder of article.
 
 <pre>php worker make:routes</pre>
-> Command create necessary files for view into previous api folder of article.
+> Create files for view into previous api folder of article.
 
 ## License
 
