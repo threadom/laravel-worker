@@ -7,14 +7,14 @@ It's time to change the role of staff member.\
 The craftman become from the artisan to the worker.\
 Industry is not better than crafting, but more productive.
 
-Worker come with a folders and files structures for modulables applications.
+Worker come with a new folders and files structures for modulables applications.
 
 ## Structures
 
 <pre>
 /laravel_modules
 +--> /module_name
-|    +--> <module_name>Routes.php
+|    +--> &gt;module_name&lt;Routes.php
 |    +--> /submodule_name --api
 |    |    +--> /queries
 |    |    |    +-> create.sql
@@ -89,6 +89,7 @@ Create a object submodule article in module article
         +--> ArticleScript.ts
 </pre>
 
+Create a object submodule article in module article
 > <pre>php worker make:submodule Article/articles --list</pre>
 <pre>
 /modules
