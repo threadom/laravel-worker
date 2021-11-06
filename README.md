@@ -14,31 +14,31 @@ Worker come with a new folders and files structures for modulables applications.
 <pre>
 /laravel_modules
 +--> /module_name
-|    +--> &gt;module_name&lt;Routes.php
+|    +--> &lt;module_name&gt;Routes.php
 |    +--> /submodule_name --api
 |    |    +--> /queries
 |    |    |    +-> create.sql
 |    |    |    +-> replace.sql
 |    |    |    +-> update.sql
 |    |    |    +-> delete.sql
-|    |    +--> <submodule_name>Migration.php
-|    |    +--> <submodule_name>Model.php
-|    |    +--> <submodule_name>Seeder.php
-|    |    +--> <submodule_name>Factory.php
-|    |    +--> <submodule_name>APICRUD.php
+|    |    +--> &lt;submodule_name&gt;Migration.php
+|    |    +--> &lt;submodule_name&gt;Model.php
+|    |    +--> &lt;submodule_name&gt;Seeder.php
+|    |    +--> &lt;submodule_name&gt;Factory.php
+|    |    +--> &lt;submodule_name&gt;APICRUD.php
 |    |
 |    +--> /submodule_name --view
-|    |    +--> <submodule_name>Controller.php
-|    |    +--> <submodule_name>View.blade.php
-|    |    +--> <submodule_name>Script.ts
+|    |    +--> &lt;submodule_name&gt;Controller.php
+|    |    +--> &lt;submodule_name&gt;View.blade.php
+|    |    +--> &lt;submodule_name&gt;Script.ts
 |    |
 |    +--> /submodule_name --list
 |    |    +--> /queries
 |    |    |    +--> query_1.sql
-|    |    +--> <submodule_name>Controller.php
-|    |    +--> <submodule_name>View.blade.php
-|    |    +--> <submodule_name>Script.ts
-|    |    +--> <submodule_name>APIList.php
+|    |    +--> &lt;submodule_name&gt;Controller.php
+|    |    +--> &lt;submodule_name&gt;View.blade.php
+|    |    +--> &lt;submodule_name&gt;Script.ts
+|    |    +--> &lt;submodule_name&gt;APIList.php
 ...
 </pre>
 
