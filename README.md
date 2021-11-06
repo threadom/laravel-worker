@@ -7,7 +7,7 @@ It's time to change the role of staff member.\
 The craftman become from the artisan to the worker.\
 Industry is not better than crafting, but more productive.
 
-Worker come with a folders and files structures for modulable application.
+Worker come with a folders and files structures for modulables applications.
 
 ## Structures
 
@@ -39,19 +39,19 @@ Worker come with a folders and files structures for modulable application.
 
 ## Usages
 
-> All successful commands verify if modules directory exist.
+> All successful commands verify if modules folder exist.
 
 <pre>php worker make:module ModuleName</pre>
-> Command create necessary files for view into previous api folder of article.
+> Command create necessary folders and files for the module.
 
-<pre>php worker make:submodule ModuleName/SubModuleName1 --api</pre>
-> Command create necessary files for view into previous api folder of article.
+<pre>php worker make:submodule ModuleName/SubModuleName1</pre>
+> Command create necessary folders and files for the submodule. (api and view)
 
-<pre>php worker make:submodule ModuleName/SubModuleName2 --view</pre>
-> Command create necessary files for view into previous api folder of article.
+<pre>php worker make:submodule ModuleName/SubModuleName2 --api</pre>
+> Command create necessary folders and api files for the submodule.
 
-<pre>php worker make:submodule ModuleName/SubModuleName3 --view --model=SubModuleName1</pre>
-> Command create necessary files for view into previous api folder of article.
+<pre>php worker make:submodule ModuleName/SubModuleName3 --view</pre>
+> Command create necessary folders and view files for the submodule.
 
 <pre>php worker make:route ModuleName</pre>
 > Command create necessary files for view into previous api folder of article.
