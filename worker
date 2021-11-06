@@ -1,0 +1,62 @@
+#!/usr/bin/env php
+<?php
+
+// Check if console
+if (PHP_SAPI === 'cli') {
+    // Check if modules directory exist
+    if (!file_exists(__DIR__ . '/modules/')) {
+        mkdir(__DIR__ . '/modules/');
+    }
+    if (is_dir(__DIR__ . '/modules/')) {
+        if ($argc >= 1) {
+            unset($argv[0]);
+            dispatch_command($argv);
+        }
+    } else {
+        echo '"module" is not a directory';
+    }
+}
+
+function dispatch_command($argv) {
+    switch (strtolower($argv[1])) {
+        case 'make:module':
+            unset($argv[1]);
+            make_module($argv);
+            break;
+        case 'make:submodule':
+            unset($argv[1]);
+            make_submodule($argv);
+            break;
+        case 'make:routes':
+            unset($argv[1]);
+            make_route($argv);
+            break;
+        case 'make:routes':
+            unset($argv[1]);
+            make_routes($argv);
+            break;
+        default:
+            echo "\033[41;30m ".'Worker : Command "'.$argv[1].'" is not defined.'." \033[0m\r\n";
+            break;
+    }
+}
+
+function make_module($argv) {
+    echo "\033[44;30m ".'worker : make:module '.implode(' ',$argv).'.'." \033[0m\r\n";
+    echo "\033[42;30m ".'worker : done.'." \033[0m\r\n";
+}
+
+function make_submodule($argv) {
+    echo "\033[44;30m ".'worker : make:submodule '.implode(' ',$argv).'.'." \033[0m\r\n";
+    echo "\033[42;30m ".'worker : done.'." \033[0m\r\n";
+}
+
+function make_route($argv) {
+    echo "\033[44;30m ".'worker : make:route '.implode(' ',$argv).'.'." \033[0m\r\n";
+    echo "\033[42;30m ".'worker : done.'." \033[0m\r\n";
+}
+
+function make_routes($argv) {
+    echo "\033[44;30m ".'worker : make:routes '.implode(' ',$argv).'.'." \033[0m\r\n";
+    echo "\033[42;30m ".'worker : done.'." \033[0m\r\n";
+}
