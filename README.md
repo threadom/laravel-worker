@@ -14,6 +14,7 @@ Worker come with a folders and files structures for modulables applications.
 <pre>
 /laravel_modules
 +--> /module_name
+|    +--> <module_name>Routes.php
 |    +--> /submodule_name --api
 |    |    +--> /queries
 |    |    |    +-> create.sql
@@ -48,20 +49,20 @@ Worker come with a folders and files structures for modulables applications.
 <pre>php worker make:module ModuleName</pre>
 > Create folders and files for the module.
 
-<pre>php worker make:submodule ModuleName/SubModuleName1</pre>
-> Create folders and files for the submodule. (api and view)
-
 <pre>php worker make:submodule ModuleName/SubModuleName2 --api</pre>
+<pre>php worker make:submodule ModuleName/SubModuleName2 --api --object</pre>
+<pre>php worker make:submodule ModuleName/SubModuleName2 --api --list</pre>
 > Create folders and "api" files for the submodule.
 
 <pre>php worker make:submodule ModuleName/SubModuleName3 --view</pre>
 > Create folders and "view" files for the submodule.
 
+<pre>php worker make:submodule ModuleName/SubModuleName1 --object</pre>
+<pre>php worker make:submodule ModuleName/SubModuleName1 --list</pre>
+> Create folders and files for the submodule. (api and view)
+
 <pre>php worker make:route ModuleName</pre>
 > Create a routing file with entry points for APIs and views of the module and submodules.
-
-<pre>php worker make:route ModuleName/SubModuleName</pre>
-> Create a routing file with entry points for API and view of the submodule.
 
 <pre>php worker make:routes</pre>
 > Create a routing file with entry points for APIs and views of every modules and submodules.
@@ -72,7 +73,6 @@ Worker come with a folders and files structures for modulables applications.
 <pre>
 /modules
 +--> /Article
-...
 </pre>
 
 > <pre>php worker make:submodule Article/article --api</pre>
@@ -82,15 +82,14 @@ Worker come with a folders and files structures for modulables applications.
     +--> /article
         +--> /queries
         |    +-> create.sql
+        |    +-> read.sql
         |    +-> update.sql
         |    +-> delete.sql
-        |    +-> read.sql
         +--> ArticleMigration.php
         +--> ArticleModel.php
         +--> ArticleSeeder.php
         +--> ArticleFactory.php
         +--> ArticleAPICRUD.php
-...
 </pre>
 
 > <pre>php worker make:submodule Article/article --view</pre>
@@ -101,7 +100,6 @@ Worker come with a folders and files structures for modulables applications.
         +--> ArticleController.php
         +--> ArticleView.blade.php
         +--> ArticleScript.ts
-...
 </pre>
 
 > <pre>php worker make:submodule Article/article</pre>
@@ -111,9 +109,9 @@ Worker come with a folders and files structures for modulables applications.
     +--> /article
         +--> /queries
         |    +-> create.sql
+        |    +-> read.sql
         |    +-> update.sql
         |    +-> delete.sql
-        |    +-> read.sql
         +--> ArticleMigration.php
         +--> ArticleModel.php
         +--> ArticleSeeder.php
@@ -122,7 +120,6 @@ Worker come with a folders and files structures for modulables applications.
         +--> ArticleController.php
         +--> ArticleView.blade.php
         +--> ArticleScript.ts
-...
 </pre>
 
 > <pre>php worker make:submodule Article/articles --list</pre>
@@ -136,11 +133,35 @@ Worker come with a folders and files structures for modulables applications.
         +--> ArticlesView.blade.php
         +--> ArticlesScript.ts
         +--> ArticlesAPIList.php
-...
 </pre>
 
-<pre>php worker make:routes</pre>
-> Create files for view into previous api folder of article.
+> <pre>php worker make:routes</pre>
+<pre>
+/modules
++--> /Article
+    +--> ArticleRoutes.php
+    +--> /article
+        +--> /queries
+        |    +-> create.sql
+        |    +-> read.sql
+        |    +-> update.sql
+        |    +-> delete.sql
+        +--> ArticleMigration.php
+        +--> ArticleModel.php
+        +--> ArticleSeeder.php
+        +--> ArticleFactory.php
+        +--> ArticleAPIObject.php
+        +--> ArticleController.php
+        +--> ArticleView.blade.php
+        +--> ArticleScript.ts
+    +--> /articles
+        +--> /queries
+        |    +-> select.sql
+        +--> ArticlesController.php
+        +--> ArticlesView.blade.php
+        +--> ArticlesScript.ts
+        +--> ArticlesAPIList.php
+</pre>
 
 ## License
 
