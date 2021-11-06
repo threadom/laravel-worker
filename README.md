@@ -60,16 +60,16 @@ Create a routing file with entry points for APIs and views of every modules and 
 
 Create a module named Article
 > <pre>php worker make:module Article</pre>
-<pre>
+<pre><b>
 /modules
 +--> /Article
-</pre>
+</b></pre>
 
 Create a object submodule article in module article
 > <pre>php worker make:submodule Article/article --object</pre>
 <pre>
 /modules
-+--> /Article
++--> /Article<b>
     +--> /article
         +--> /queries
         |    +-> create.sql
@@ -84,13 +84,13 @@ Create a object submodule article in module article
         +--> ArticleController.php
         +--> ArticleView.blade.php
         +--> ArticleScript.ts
-</pre>
+</b></pre>
 
 Create a object submodule article in module article
 > <pre>php worker make:submodule Article/articles --list</pre>
 <pre>
 /modules
-+--> /Article
++--> /Article<b>
     +--> /articles
         +--> /queries
         |    +-> select.sql
@@ -98,13 +98,13 @@ Create a object submodule article in module article
         +--> ArticlesController.php
         +--> ArticlesView.blade.php
         +--> ArticlesScript.ts
-</pre>
+</b></pre>
 
 > <pre>php worker make:routes</pre>
 <pre>
 /modules
-+--> /Article
-    +--> ArticleRoutes.php
++--> /Article<b>
+    +--> ArticleRoutes.php</b>
     +--> /article
         +--> /queries
         |    +-> create.sql
@@ -179,7 +179,7 @@ Create a object api submodule article in module Article
 > <pre>php worker make:submodule Article/article --api --object</pre>
 <pre>
 /modules
-+--> /Article
++--> /Article<b>
     +--> /article
         +--> /queries
         |    +-> create.sql
@@ -191,18 +191,18 @@ Create a object api submodule article in module Article
         +--> ArticleSeeder.php
         +--> ArticleFactory.php
         +--> ArticleAPICRUD.php
-</pre>
+</b></pre>
 
 Create a object view submodule article in module Article
 > <pre>php worker make:submodule Article/article --view --object</pre>
 <pre>
 /modules
-+--> /Article
++--> /Article<b>
     +--> /article
         +--> ArticleController.php
         +--> ArticleView.blade.php
         +--> ArticleScript.ts
-</pre>
+</b></pre>
 
 ## License
 
