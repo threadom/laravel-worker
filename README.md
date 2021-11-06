@@ -30,30 +30,13 @@ Worker come with a new folders and files structures for modulables applications.
     |    +--> &lt;submodule_name&gt;View.blade.php
     |    +--> &lt;submodule_name&gt;Script.ts
     |
-    +--> /&lt;submodule_name --list
+    +--> /&lt;submodule_name --list&gt;
     |    +--> /queries
     |    |    +--> query_1.sql
+    |    +--> &lt;submodule_name&gt;APIList.php
     |    +--> &lt;submodule_name&gt;Controller.php
     |    +--> &lt;submodule_name&gt;View.blade.php
     |    +--> &lt;submodule_name&gt;Script.ts
-    |    +--> &lt;submodule_name&gt;APIList.php
-    |
-    +--> /&lt;submodule_name --api&gt;
-    |    +--> /queries
-    |    |    +-> create.sql
-    |    |    +-> replace.sql
-    |    |    +-> update.sql
-    |    |    +-> delete.sql
-    |    +--> &lt;submodule_name&gt;Migration.php
-    |    +--> &lt;submodule_name&gt;Model.php
-    |    +--> &lt;submodule_name&gt;Seeder.php
-    |    +--> &lt;submodule_name&gt;Factory.php
-    |    +--> &lt;submodule_name&gt;APICRUD.php
-    |
-    +--> /&lt;submodule_name --view
-         +--> &lt;submodule_name&gt;Controller.php
-         +--> &lt;submodule_name&gt;View.blade.php
-         +--> &lt;submodule_name&gt;Script.ts
 </pre>
 
 ## Usages
@@ -73,7 +56,7 @@ Create a routing file with entry points for APIs and views of the module and sub
 Create a routing file with entry points for APIs and views of every modules and submodules.
 > <pre>php worker make:routes</pre>
 
-## Exemples
+## Examples
 
 Create a module named Article
 > <pre>php worker make:module Article</pre>
@@ -111,10 +94,10 @@ Create a object submodule article in module article
     +--> /articles
         +--> /queries
         |    +-> select.sql
+        +--> ArticlesAPIList.php
         +--> ArticlesController.php
         +--> ArticlesView.blade.php
         +--> ArticlesScript.ts
-        +--> ArticlesAPIList.php
 </pre>
 
 > <pre>php worker make:routes</pre>
@@ -139,13 +122,44 @@ Create a object submodule article in module article
     +--> /articles
         +--> /queries
         |    +-> select.sql
+        +--> ArticlesAPIList.php
         +--> ArticlesController.php
         +--> ArticlesView.blade.php
         +--> ArticlesScript.ts
-        +--> ArticlesAPIList.php
 </pre>
 
 ## Deprecated
+
+<pre>
+/modules
++--> /&lt;module_name&gt;
+    +--> /&lt;submodule_name --api --object&gt;
+    |    +--> /queries
+    |    |    +-> create.sql
+    |    |    +-> replace.sql
+    |    |    +-> update.sql
+    |    |    +-> delete.sql
+    |    +--> &lt;submodule_name&gt;Migration.php
+    |    +--> &lt;submodule_name&gt;Model.php
+    |    +--> &lt;submodule_name&gt;Seeder.php
+    |    +--> &lt;submodule_name&gt;Factory.php
+    |    +--> &lt;submodule_name&gt;APICRUD.php
+    |
+    +--> /&lt;submodule_name --view --object&gt;
+    |    +--> &lt;submodule_name&gt;Controller.php
+    |    +--> &lt;submodule_name&gt;View.blade.php
+    |    +--> &lt;submodule_name&gt;Script.ts
+    |
+    +--> /&lt;submodule_name --api --list&gt;
+    |    +--> /queries
+    |    |    +-> select.sql
+    |    +--> &lt;submodule_name&gt;APIList.php
+    |
+    +--> /&lt;submodule_name --view --list&gt;
+         +--> &lt;submodule_name&gt;Controller.php
+         +--> &lt;submodule_name&gt;View.blade.php
+         +--> &lt;submodule_name&gt;Script.ts
+</pre>
 
 Create folders and "api" files for the submodule.
 > <pre>php worker make:submodule ModuleName/SubModuleName2 --api --object</pre>
