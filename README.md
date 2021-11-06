@@ -130,6 +130,8 @@ Create a object submodule article in module article
 
 ## Deprecated
 
+### Structures
+
 <pre>
 /modules
 +--> /&lt;module_name&gt;
@@ -161,6 +163,8 @@ Create a object submodule article in module article
          +--> &lt;submodule_name&gt;Script.ts
 </pre>
 
+### Usages
+
 Create folders and "api" files for the submodule.
 > <pre>php worker make:submodule ModuleName/SubModuleName2 --api --object</pre>
 > <pre>php worker make:submodule ModuleName/SubModuleName2 --api --list</pre>
@@ -168,6 +172,8 @@ Create folders and "api" files for the submodule.
 Create folders and "view" files for the submodule.
 > <pre>php worker make:submodule ModuleName/SubModuleName3 --view --object</pre>
 > <pre>php worker make:submodule ModuleName/SubModuleName3 --view --list</pre>
+
+### Examples
 
 Create a object api submodule article in module Article
 > <pre>php worker make:submodule Article/article --api --object</pre>
