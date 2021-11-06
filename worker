@@ -1,53 +1,12 @@
 #!/usr/bin/env php
 <?php
 
-require __DIR__.'/vendor/laravel-worker/MakeModule.php';
-require __DIR__.'/vendor/laravel-worker/MakeSubModule.php';
-require __DIR__.'/vendor/laravel-worker/MakeRoutes.php';
+require_once __DIR__ . '/vendor/laravel-worker/DispatchCommand.php';
 
 // Check if console
 if (PHP_SAPI === 'cli') {
     if ($argc >= 1) {
         unset($argv[0]);
-        dispatch_command($argv);
-    }
-}
-
-function modules_exist() {
-    // Check if modules directory exist
-    if (!file_exists(__DIR__ . '/modules/')) {
-        mkdir(__DIR__ . '/modules/');
-    }
-    if (is_dir(__DIR__ . '/modules/')) {
-        return true;
-    } else {
-        echo '"modules" is not a directory';
-    }
-    return false;
-}
-
-function dispatch_command($argv) {
-    switch (strtolower($argv[1])) {
-        case 'make:module':
-            if (modules_exist()) {
-                unset($argv[1]);
-                laravelWorker\make_module(__dir__, $argv);
-            }
-            break;
-        case 'make:submodule':
-            if (modules_exist()) {
-                unset($argv[1]);
-                laravelWorker\make_submodule(__dir__, $argv);
-            }
-            break;
-        case 'make:routes':
-            if (modules_exist()) {
-                unset($argv[1]);
-                laravelWorker\make_routes(__dir__, $argv);
-            }
-            break;
-        default:
-            echo "\033[41;30m ".'Worker : Command "'.$argv[1].'" is not defined.'." \033[0m\r\n";
-            break;
+        laravelWorker\dispatch_command(__DIR__, $argv);
     }
 }
