@@ -71,7 +71,7 @@ Worker come with a folders and files structures for modulables applications.
 ...
 </pre>
 
-<pre>php worker make:submodule Article/article --api</pre>
+> <pre>php worker make:submodule Article/article --api</pre>
 <pre>
 /laravel_modules
 +--> /module_name
@@ -89,7 +89,7 @@ Worker come with a folders and files structures for modulables applications.
 ...
 </pre>
 
-<pre>php worker make:submodule Article/articles --view</pre>
+> <pre>php worker make:submodule Article/articles --view</pre>
 <pre>
 /laravel_modules
 +--> /module_name
