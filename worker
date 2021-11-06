@@ -1,6 +1,11 @@
 #!/usr/bin/env php
 <?php
 
+require __DIR__.'/vendor/laravel-worker/MakeModule.php';
+require __DIR__.'/vendor/laravel-worker/MakeSubModule.php';
+require __DIR__.'/vendor/laravel-worker/MakeRoute.php';
+require __DIR__.'/vendor/laravel-worker/MakeRoutes.php';
+
 // Check if console
 if (PHP_SAPI === 'cli') {
     if ($argc >= 1) {
@@ -27,49 +32,29 @@ function dispatch_command($argv) {
         case 'make:module':
             if (modules_exist()) {
                 unset($argv[1]);
-                make_module($argv);                   
+                laravelWorker\make_module($argv);
             }
             break;
         case 'make:submodule':
             if (modules_exist()) {
                 unset($argv[1]);
-                make_submodule($argv);
+                laravelWorker\make_submodule($argv);
             }
             break;
         case 'make:routes':
             if (modules_exist()) {
                 unset($argv[1]);
-                make_route($argv);
+                laravelWorker\make_route($argv);
             }
             break;
         case 'make:routes':
             if (modules_exist()) {
                 unset($argv[1]);
-                make_routes($argv);
+                laravelWorker\make_routes($argv);
             }
             break;
         default:
             echo "\033[41;30m ".'Worker : Command "'.$argv[1].'" is not defined.'." \033[0m\r\n";
             break;
     }
-}
-
-function make_module($argv) {
-    echo "\033[44;30m ".'worker : make:module '.implode(' ',$argv).'.'." \033[0m\r\n";
-    echo "\033[42;30m ".'worker : done.'." \033[0m\r\n";
-}
-
-function make_submodule($argv) {
-    echo "\033[44;30m ".'worker : make:submodule '.implode(' ',$argv).'.'." \033[0m\r\n";
-    echo "\033[42;30m ".'worker : done.'." \033[0m\r\n";
-}
-
-function make_route($argv) {
-    echo "\033[44;30m ".'worker : make:route '.implode(' ',$argv).'.'." \033[0m\r\n";
-    echo "\033[42;30m ".'worker : done.'." \033[0m\r\n";
-}
-
-function make_routes($argv) {
-    echo "\033[44;30m ".'worker : make:routes '.implode(' ',$argv).'.'." \033[0m\r\n";
-    echo "\033[42;30m ".'worker : done.'." \033[0m\r\n";
 }

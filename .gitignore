@@ -1,51 +1,11 @@
-# Laravel common directories
-/app/
-/bootstrap/
-/config/
-/database/
-/public/
-/resources/
-/routes/
-/storage/
-/tests/
-/vendor/
-/server.php
-/webpack.mix.php
-/webpack.mix.js
-/phpunit.xml
-/package.json
-/composer.lock
-/composer.json
-/artisan
-.styleci.yml
-.gitattributes
-.env.example
-.editorconfig
+# ignore all
+*
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
-# Laravel 5 & Lumen specific with changed public path
-public_html/storage
-public_html/hot
-
-node_modules/
-npm-debug.log
-yarn-error.log
-
-storage/*.key
-.env
-.env.backup
-Homestead.yaml
-Homestead.json
-.phpunit.result.cache
-docker-compose.override.yml
-
-/.vagrant
-/.idea
-/.vscode
+# except
+!.gitignore
+!LICENSE
+!README.md
+!worker
+!vendor
+!vendor/laravel-worker
+!vendor/laravel-worker/*
