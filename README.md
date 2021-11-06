@@ -11,8 +11,7 @@ Worker come with a new folders and files structures for modulables applications.
 
 ## Structures
 
-<pre>
-/modules
+<pre>/modules
 +--> /&lt;module_name&gt;
     +--> &lt;module_name&gt;Routes.php
     +--> /&lt;submodule_name --object&gt;
@@ -60,15 +59,13 @@ Create a routing file with entry points for APIs and views of every modules and 
 
 Create a module named Article
 > <pre>php worker make:module Article</pre>
-<pre><b>
-/modules
+<pre><b>/modules
 +--> /Article
 </b></pre>
 
 Create a object submodule article in module article
 > <pre>php worker make:submodule Article/article --object</pre>
-<pre>
-/modules
+<pre>/modules
 +--> /Article<b>
     +--> /article
         +--> /queries
@@ -88,8 +85,7 @@ Create a object submodule article in module article
 
 Create a object submodule article in module article
 > <pre>php worker make:submodule Article/articles --list</pre>
-<pre>
-/modules
+<pre>/modules
 +--> /Article<b>
     +--> /articles
         +--> /queries
@@ -101,8 +97,7 @@ Create a object submodule article in module article
 </b></pre>
 
 > <pre>php worker make:routes</pre>
-<pre>
-/modules
+<pre>/modules
 +--> /Article<b>
     +--> ArticleRoutes.php</b>
     +--> /article
@@ -132,8 +127,7 @@ Create a object submodule article in module article
 
 ### Structures
 
-<pre>
-/modules
+<pre>/modules
 +--> /&lt;module_name&gt;
     +--> /&lt;submodule_name --api --object&gt;
     |    +--> /queries
@@ -177,8 +171,7 @@ Create folders and "view" files for the submodule.
 
 Create a object api submodule article in module Article
 > <pre>php worker make:submodule Article/article --api --object</pre>
-<pre>
-/modules
+<pre>/modules
 +--> /Article<b>
     +--> /article
         +--> /queries
@@ -195,8 +188,7 @@ Create a object api submodule article in module Article
 
 Create a object view submodule article in module Article
 > <pre>php worker make:submodule Article/article --view --object</pre>
-<pre>
-/modules
+<pre>/modules
 +--> /Article<b>
     +--> /article
         +--> ArticleController.php
