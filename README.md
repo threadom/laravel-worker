@@ -3,8 +3,9 @@
 Laravel artisan is great but not really modulable.
 
 Craft was supplanted by industry a long time ago.\
-Other terms appeared to qualify the personnel.\
-The craftman passing from the artisan to the worker.
+It's time to change the role of staff member.\
+The craftman become from the artisan to the worker.\
+Industry is not better than crafting, but more productive.
 
 Worker come with a folders and files structures for modulable application.
 
