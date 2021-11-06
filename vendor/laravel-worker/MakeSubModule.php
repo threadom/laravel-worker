@@ -19,7 +19,12 @@ function make_submodule($p_dir, $p_argv)
                 if (!file_exists($submodule_dir)) {
                     mkdir($submodule_dir);
 
-                    make_object($p_dir, $l_argv);
+                    if (strtolower($l_argv[1]) == '--object') {
+                        make_object($p_dir, $l_argv);
+                    }
+                    if (strtolower($l_argv[1]) == '--list') {
+                        make_list($p_dir, $l_argv);
+                    }
                     
                     echo "\033[42;30m " . 'worker : done.' . " \033[0m\r\n";
                 } else {

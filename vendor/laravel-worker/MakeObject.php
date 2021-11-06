@@ -11,20 +11,20 @@ function make_object($p_dir, $p_argv)
         $module_dir = $p_dir . '/modules/' . $l_split[0];
         $submodule_dir = $module_dir . '/' . $l_split[1];
 
-        create_file($submodule_dir, 'Migration', '.php', $l_split[1]);
-        create_file($submodule_dir, 'Model', '.php', $l_split[1]);
-        create_file($submodule_dir, 'Seeder', '.php', $l_split[1]);
-        create_file($submodule_dir, 'Factory', '.php', $l_split[1]);
-        create_file($submodule_dir, 'API', '.php', $l_split[1]);
-        create_file($submodule_dir, 'Controller', '.php', $l_split[1]);
-        create_file($submodule_dir, 'View', '.blade.php', $l_split[1]);
-        create_file($submodule_dir, 'Script', '.ts', $l_split[1]);
+        create_object_file($submodule_dir, 'Migration', '.php', $l_split[1]);
+        create_object_file($submodule_dir, 'Model', '.php', $l_split[1]);
+        create_object_file($submodule_dir, 'Seeder', '.php', $l_split[1]);
+        create_object_file($submodule_dir, 'Factory', '.php', $l_split[1]);
+        create_object_file($submodule_dir, 'API', '.php', $l_split[1]);
+        create_object_file($submodule_dir, 'Controller', '.php', $l_split[1]);
+        create_object_file($submodule_dir, 'View', '.blade.php', $l_split[1]);
+        create_object_file($submodule_dir, 'Script', '.ts', $l_split[1]);
     } else {
         echo "\033[41;30m " . 'worker : module/submodule syntax error.' . " \033[0m\r\n";
     }
 }
 
-function create_file($p_dir, $p_type, $p_extension, $p_submodule)
+function create_object_file($p_dir, $p_type, $p_extension, $p_submodule)
 {
     $file_dir = $p_dir . '/' . $p_submodule . 'Object' . $p_type . $p_extension;
     if (!file_exists($file_dir)) {

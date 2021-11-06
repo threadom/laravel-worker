@@ -5,22 +5,27 @@ namespace laravelWorker;
 function make_list($p_dir, $p_argv)
 {
     $l_argv = array_values($p_argv);
-    echo "\033[44;30m " . 'worker : make:routes ' . implode(' ', $l_argv) . '.' . " \033[0m\r\n";
 
-    $module_dir = $p_dir . '/modules/' . $l_argv[0];
-    $routes_dir = $module_dir . '/' . $l_argv[0] . 'Routes.php';
-    if (file_exists($module_dir)) {
-        if (is_dir($module_dir)) {
-            if (!file_exists($routes_dir)) {
-                copy(__DIR__ . '/templates/module/TemplateRoutes.php', $routes_dir);
-                echo "\033[42;30m " . 'worker : done.' . " \033[0m\r\n";
-            } else {
-                echo "\033[41;30m " . 'worker : routes file "' . $l_argv[0] . '" already exist.' . " \033[0m\r\n";
-            }
-        } else {
-            echo "\033[41;30m " . 'worker : module "' . $l_argv[0] . '" is not a folder.' . " \033[0m\r\n";
-        }
+    $l_split = explode('/', $l_argv[0]);
+    if (count($l_split) == 2) {
+        $module_dir = $p_dir . '/modules/' . $l_split[0];
+        $submodule_dir = $module_dir . '/' . $l_split[1];
+
+        create_list_file($submodule_dir, 'API', '.php', $l_split[1]);
+        create_list_file($submodule_dir, 'Controller', '.php', $l_split[1]);
+        create_list_file($submodule_dir, 'View', '.blade.php', $l_split[1]);
+        create_list_file($submodule_dir, 'Script', '.ts', $l_split[1]);
     } else {
-        echo "\033[41;30m " . 'worker : module folder "' . $l_argv[0] . '" already exist.' . " \033[0m\r\n";
+        echo "\033[41;30m " . 'worker : module/submodule syntax error.' . " \033[0m\r\n";
+    }
+}
+
+function create_list_file($p_dir, $p_type, $p_extension, $p_submodule)
+{
+    $file_dir = $p_dir . '/' . $p_submodule . 'List' . $p_type . $p_extension;
+    if (!file_exists($file_dir)) {
+        copy(__DIR__ . '/templates/list/TemplateList' . $p_type . $p_extension, $file_dir);
+    } else {
+        echo "\033[41;30m " . 'worker : ' . strtolower($p_type) . ' file already exist for "' . $p_submodule . '".' . " \033[0m\r\n";
     }
 }
