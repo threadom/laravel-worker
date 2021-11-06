@@ -64,15 +64,15 @@ Worker come with a folders and files structures for modulables applications.
 
 ## Exemples
 
-<pre>php worker make:module Article</pre>
-> <pre>
+> <pre>php worker make:module Article</pre>
+<pre>
 /laravel_modules
 +--> /module_name
 ...
 </pre>
 
-<pre>php worker make:submodule Article/article --api</pre>
-> <pre>
+> <pre>php worker make:submodule Article/article --api</pre>
+<pre>
 /laravel_modules
 +--> /module_name
     +--> /submodule_name --api
@@ -89,8 +89,8 @@ Worker come with a folders and files structures for modulables applications.
 ...
 </pre>
 
-<pre>php worker make:submodule Article/articles --view</pre>
-> <pre>
+> <pre>php worker make:submodule Article/articles --view</pre>
+<pre>
 /laravel_modules
 +--> /module_name
     +--> /submodule_name --api
