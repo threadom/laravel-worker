@@ -9,3 +9,10 @@
 !vendor
 !vendor/laravel-worker
 !vendor/laravel-worker/*
+!vendor/laravel-worker/templates
+!vendor/laravel-worker/templates/list
+!vendor/laravel-worker/templates/list/*
+!vendor/laravel-worker/templates/module
+!vendor/laravel-worker/templates/module/*
+!vendor/laravel-worker/templates/object
+!vendor/laravel-worker/templates/object/*

@@ -3,7 +3,6 @@
 
 require __DIR__.'/vendor/laravel-worker/MakeModule.php';
 require __DIR__.'/vendor/laravel-worker/MakeSubModule.php';
-require __DIR__.'/vendor/laravel-worker/MakeRoute.php';
 require __DIR__.'/vendor/laravel-worker/MakeRoutes.php';
 
 // Check if console
@@ -32,25 +31,19 @@ function dispatch_command($argv) {
         case 'make:module':
             if (modules_exist()) {
                 unset($argv[1]);
-                laravelWorker\make_module($argv);
+                laravelWorker\make_module(__dir__, $argv);
             }
             break;
         case 'make:submodule':
             if (modules_exist()) {
                 unset($argv[1]);
-                laravelWorker\make_submodule($argv);
+                laravelWorker\make_submodule(__dir__, $argv);
             }
             break;
         case 'make:routes':
             if (modules_exist()) {
                 unset($argv[1]);
-                laravelWorker\make_route($argv);
-            }
-            break;
-        case 'make:routes':
-            if (modules_exist()) {
-                unset($argv[1]);
-                laravelWorker\make_routes($argv);
+                laravelWorker\make_routes(__dir__, $argv);
             }
             break;
         default:
