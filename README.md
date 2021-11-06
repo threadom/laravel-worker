@@ -12,34 +12,48 @@ Worker come with a new folders and files structures for modulables applications.
 ## Structures
 
 <pre>
-/laravel_modules
-+--> /module_name
-|    +--> &lt;module_name&gt;Routes.php
-|    +--> /submodule_name --api
-|    |    +--> /queries
-|    |    |    +-> create.sql
-|    |    |    +-> replace.sql
-|    |    |    +-> update.sql
-|    |    |    +-> delete.sql
-|    |    +--> &lt;submodule_name&gt;Migration.php
-|    |    +--> &lt;submodule_name&gt;Model.php
-|    |    +--> &lt;submodule_name&gt;Seeder.php
-|    |    +--> &lt;submodule_name&gt;Factory.php
-|    |    +--> &lt;submodule_name&gt;APICRUD.php
-|    |
-|    +--> /submodule_name --view
-|    |    +--> &lt;submodule_name&gt;Controller.php
-|    |    +--> &lt;submodule_name&gt;View.blade.php
-|    |    +--> &lt;submodule_name&gt;Script.ts
-|    |
-|    +--> /submodule_name --list
-|    |    +--> /queries
-|    |    |    +--> query_1.sql
-|    |    +--> &lt;submodule_name&gt;Controller.php
-|    |    +--> &lt;submodule_name&gt;View.blade.php
-|    |    +--> &lt;submodule_name&gt;Script.ts
-|    |    +--> &lt;submodule_name&gt;APIList.php
-...
+/modules
++--> /&lt;module_name&gt;
+    +--> &lt;module_name&gt;Routes.php
+    +--> /&lt;submodule_name --object&gt;
+    |    +--> /queries
+    |    |    +-> create.sql
+    |    |    +-> replace.sql
+    |    |    +-> update.sql
+    |    |    +-> delete.sql
+    |    +--> &lt;submodule_name&gt;Migration.php
+    |    +--> &lt;submodule_name&gt;Model.php
+    |    +--> &lt;submodule_name&gt;Seeder.php
+    |    +--> &lt;submodule_name&gt;Factory.php
+    |    +--> &lt;submodule_name&gt;APICRUD.php
+    |    +--> &lt;submodule_name&gt;Controller.php
+    |    +--> &lt;submodule_name&gt;View.blade.php
+    |    +--> &lt;submodule_name&gt;Script.ts
+    |
+    +--> /&lt;submodule_name --list
+    |    +--> /queries
+    |    |    +--> query_1.sql
+    |    +--> &lt;submodule_name&gt;Controller.php
+    |    +--> &lt;submodule_name&gt;View.blade.php
+    |    +--> &lt;submodule_name&gt;Script.ts
+    |    +--> &lt;submodule_name&gt;APIList.php
+    |
+    +--> /&lt;submodule_name --api&gt;
+    |    +--> /queries
+    |    |    +-> create.sql
+    |    |    +-> replace.sql
+    |    |    +-> update.sql
+    |    |    +-> delete.sql
+    |    +--> &lt;submodule_name&gt;Migration.php
+    |    +--> &lt;submodule_name&gt;Model.php
+    |    +--> &lt;submodule_name&gt;Seeder.php
+    |    +--> &lt;submodule_name&gt;Factory.php
+    |    +--> &lt;submodule_name&gt;APICRUD.php
+    |
+    +--> /&lt;submodule_name --view
+         +--> &lt;submodule_name&gt;Controller.php
+         +--> &lt;submodule_name&gt;View.blade.php
+         +--> &lt;submodule_name&gt;Script.ts
 </pre>
 
 ## Usages
