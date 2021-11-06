@@ -66,16 +66,16 @@ Worker come with a folders and files structures for modulables applications.
 
 > <pre>php worker make:module Article</pre>
 <pre>
-/laravel_modules
-+--> /module_name
+/modules
++--> /Article
 ...
 </pre>
 
 > <pre>php worker make:submodule Article/article --api</pre>
 <pre>
-/laravel_modules
-+--> /module_name
-    +--> /submodule_name --api
+/modules
++--> /Article
+    +--> /article
         +--> /queries
         |    +-> create.sql
         |    +-> update.sql
@@ -89,21 +89,51 @@ Worker come with a folders and files structures for modulables applications.
 ...
 </pre>
 
-> <pre>php worker make:submodule Article/articles --view</pre>
+> <pre>php worker make:submodule Article/article --view</pre>
 <pre>
-/laravel_modules
-+--> /module_name
-    +--> /submodule_name --api
-        +--> /queries
-        |    +-> query_1.sql
+/modules
++--> /Article
+    +--> /article
         +--> controller.php
         +--> view.blade.php
         +--> script.ts
 ...
 </pre>
 
-<pre>php worker make:submodule Article/article --view --model=article</pre>
-> Create files for view into previous api folder of article.
+> <pre>php worker make:submodule Article/article</pre>
+<pre>
+/modules
++--> /Article
+    +--> /article
+        +--> /queries
+        |    +-> create.sql
+        |    +-> update.sql
+        |    +-> delete.sql
+        |    +-> read.sql
+        +--> migration.php
+        +--> model.php
+        +--> seeder.php
+        +--> factory.php
+        +--> apicontroller.php
+        +--> controller.php
+        +--> view.blade.php
+        +--> script.ts
+...
+</pre>
+
+> <pre>php worker make:submodule Article/articles --list</pre>
+<pre>
+/modules
++--> /Article
+    +--> /articles
+        +--> /queries
+        |    +-> select.sql
+        +--> controller.php
+        +--> view.blade.php
+        +--> script.ts
+        +--> apicontroller.php
+...
+</pre>
 
 <pre>php worker make:routes</pre>
 > Create files for view into previous api folder of article.
