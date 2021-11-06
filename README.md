@@ -16,24 +16,28 @@ Worker come with a folders and files structures for modulables applications.
 +--> /module_name
 |    +--> /submodule_name --api
 |    |    +--> /queries
-|    |    |    +-> query_1.sql
-|    |    |    +-> query_2.sql
-|    |    |    +-> query_3.sql
-|    |    +--> migration.php
-|    |    +--> model.php
-|    |    +--> seeder.php
-|    |    +--> factory.php
-|    |    +--> apicontroller.php
+|    |    |    +-> create.sql
+|    |    |    +-> replace.sql
+|    |    |    +-> update.sql
+|    |    |    +-> delete.sql
+|    |    +--> <submodule_name>Migration.php
+|    |    +--> <submodule_name>Model.php
+|    |    +--> <submodule_name>Seeder.php
+|    |    +--> <submodule_name>Factory.php
+|    |    +--> <submodule_name>APICRUD.php
 |    |
 |    +--> /submodule_name --view
-|         +--> /queries
-|         |    +--> query_1.sql
-|         |    +--> query_2.sql
-|         |    +--> query_3.sql
-|         +--> controller.php
-|         +--> view.blade.php
-|         +--> script.ts
-|
+|    |    +--> <submodule_name>Controller.php
+|    |    +--> <submodule_name>View.blade.php
+|    |    +--> <submodule_name>Script.ts
+|    |
+|    +--> /submodule_name --list
+|    |    +--> /queries
+|    |    |    +--> query_1.sql
+|    |    +--> <submodule_name>Controller.php
+|    |    +--> <submodule_name>View.blade.php
+|    |    +--> <submodule_name>Script.ts
+|    |    +--> <submodule_name>APIList.php
 ...
 </pre>
 
@@ -81,11 +85,11 @@ Worker come with a folders and files structures for modulables applications.
         |    +-> update.sql
         |    +-> delete.sql
         |    +-> read.sql
-        +--> migration.php
-        +--> model.php
-        +--> seeder.php
-        +--> factory.php
-        +--> apicontroller.php
+        +--> ArticleMigration.php
+        +--> ArticleModel.php
+        +--> ArticleSeeder.php
+        +--> ArticleFactory.php
+        +--> ArticleAPICRUD.php
 ...
 </pre>
 
@@ -94,9 +98,9 @@ Worker come with a folders and files structures for modulables applications.
 /modules
 +--> /Article
     +--> /article
-        +--> controller.php
-        +--> view.blade.php
-        +--> script.ts
+        +--> ArticleController.php
+        +--> ArticleView.blade.php
+        +--> ArticleScript.ts
 ...
 </pre>
 
@@ -110,14 +114,14 @@ Worker come with a folders and files structures for modulables applications.
         |    +-> update.sql
         |    +-> delete.sql
         |    +-> read.sql
-        +--> migration.php
-        +--> model.php
-        +--> seeder.php
-        +--> factory.php
-        +--> apicontroller.php
-        +--> controller.php
-        +--> view.blade.php
-        +--> script.ts
+        +--> ArticleMigration.php
+        +--> ArticleModel.php
+        +--> ArticleSeeder.php
+        +--> ArticleFactory.php
+        +--> ArticleAPIObject.php
+        +--> ArticleController.php
+        +--> ArticleView.blade.php
+        +--> ArticleScript.ts
 ...
 </pre>
 
@@ -128,10 +132,10 @@ Worker come with a folders and files structures for modulables applications.
     +--> /articles
         +--> /queries
         |    +-> select.sql
-        +--> controller.php
-        +--> view.blade.php
-        +--> script.ts
-        +--> apicontroller.php
+        +--> ArticlesController.php
+        +--> ArticlesView.blade.php
+        +--> ArticlesScript.ts
+        +--> ArticlesAPIList.php
 ...
 </pre>
 
