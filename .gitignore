@@ -17,4 +17,8 @@
 !vendor/laravel-worker/templates/object
 !vendor/laravel-worker/templates/object/*
 !test-libre-erp.bat
-!libre-erp/*
+!modules_test/*
+!modules_test/*/*
+!modules_test/*/*/*
+!modules_test/*/*/*/*
+
