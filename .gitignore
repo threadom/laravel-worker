@@ -17,7 +17,7 @@
 !vendor/laravel-worker/templates/object
 !vendor/laravel-worker/templates/object/*
 !test.bat
+!test
 !test/*
 !test/*/*
 !test/*/*/*
-!test/*/*/*/*
