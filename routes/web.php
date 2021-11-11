@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use Modules\Accueil\AccueilRoutes;
+use Modules\ModulesRoutes;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-AccueilRoutes::ObjectsControllersRoutes();
-// TemplateRoutes::ListsControllersRoutes();
+ModulesRoutes::WebRoutes();

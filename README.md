@@ -9,6 +9,22 @@ Industry is not better than crafting, but more productive.
 
 Worker come with a new folders and files structures for modulables applications.
 
+## Installation
+
+Add "modules" folder to composer.json for adding classes to autoload
+<pre>
+...
+"autoload": {
+    "psr-4": {
+        "App\\": "app/",
+        "Database\\Factories\\": "database/factories/",
+        "Database\\Seeders\\": "database/seeders/",
+        <b>"Modules\\": "modules/"</b>
+    }
+},
+...
+</pre>
+
 ## Structures
 
 <pre>/modules

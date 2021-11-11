@@ -11,6 +11,8 @@ function modules_exist($p_dir)
     // Check if modules directory exist
     if (!file_exists($p_dir . '/modules/')) {
         mkdir($p_dir . '/modules/');
+        copy(__DIR__ . '/templates/routes/ModulesRoutes.json', $p_dir . '/modules/ModulesRoutes.json');
+        copy(__DIR__ . '/templates/routes/ModulesRoutes.php', $p_dir . '/modules/ModulesRoutes.php');
     }
     if (is_dir($p_dir . '/modules/')) {
         return true;
