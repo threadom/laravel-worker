@@ -21,8 +21,8 @@
 !test/*
 !test/*/*
 !test/*/*/*
-# !modules
-# !modules/*
-# !modules/*/*
-# !modules/*/*/*
-# !modules/*/*/*/*
+!modules
+!modules/*
+!modules/*/*
+!modules/*/*/*
+!modules/*/*/*/*

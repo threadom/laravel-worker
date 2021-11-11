@@ -1,6 +1,6 @@
 <?php
 
-namespace module\Module;
+namespace Modules\Article;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 // -- List Controller Section
 // use Modules\Module\Submodule\TemplateListController;
 
-class TemplateRoutes
+class ArticleRoutes
 {
     static public function ObjectsControllersRoutes() {
         /*

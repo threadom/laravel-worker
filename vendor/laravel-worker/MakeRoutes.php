@@ -8,13 +8,20 @@ function make_routes($p_dir, $p_argv)
     echo "\033[44;30m " . 'worker : make:routes ' . implode(' ', $l_argv) . '.' . " \033[0m\r\n";
 
     $module_dir = $p_dir . '/modules/' . $l_argv[0];
-    $routes_dir = $module_dir . '/' . $l_argv[0] . 'Routes.php';
+    $file_dir = $module_dir . '/' . $l_argv[0] . 'Routes.php';
     if (file_exists($module_dir)) {
         if (is_dir($module_dir)) {
-            if (!file_exists($routes_dir)) {
-                copy(__DIR__ . '/templates/module/TemplateRoutes.php', $routes_dir);
+            if (!file_exists($file_dir)) {
+                copy(__DIR__ . '/templates/routes/TemplateRoutes.php', $file_dir);
 
-                echo "\033[42;30m " . 'worker : done.' . " \033[0m\r\n";
+                $lines = file_get_contents($file_dir);
+
+                $lines = str_replace('\\Module;', '\\'.$l_argv[0].';',  $lines);
+                $lines = str_replace('TemplateRoutes', $l_argv[0].'Routes',  $lines);
+        
+                file_put_contents($file_dir, $lines);
+
+                echo "\033[42;30m " . 'worker : make:route done.' . " \033[0m\r\n";
             } else {
                 echo "\033[41;30m " . 'worker : routes file "' . $l_argv[0] . '" already exist.' . " \033[0m\r\n";
             }

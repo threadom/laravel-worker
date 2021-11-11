@@ -5,14 +5,10 @@ namespace Modules\Accueil\Accueils;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class TemplateObjectController extends Controller
+class AccueilsListController extends Controller
 {
     public function index() {
-        // view()->addNamespace('my_views', app_path('custom_views')); // let's add /app/custom_views via namespace
-        // view('my_views::some.view.name') // then: /app/custom_views/some/view/name.blade.php
-        // --
-        // view()->addLocation(app_path('cutom_views')); // OR via path
-        // view('some.view.name') // // then: search in /app/views first, then custom locations
-        return view('modules/Module/Submodule/TemplateObjectView');
+        view()->addNamespace('Modules_Accueil_Accueils', __DIR__);
+        return view('Modules_Accueil_Accueils::AccueilsListView');
     }
 }

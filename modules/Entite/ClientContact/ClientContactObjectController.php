@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ClientContactObjectController extends Controller
 {
     public function index() {
-        view()->addNamespace('Modules_Entite_ClientContact', app_path(__dir__));
+        view()->addNamespace('Modules_Entite_ClientContact', __DIR__);
         return view('Modules_Entite_ClientContact::ClientContactObjectView');
     }
 }

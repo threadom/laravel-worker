@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class FournisseurObjectController extends Controller
 {
     public function index() {
-        view()->addNamespace('Modules_Entite_Fournisseur', app_path(__dir__));
+        view()->addNamespace('Modules_Entite_Fournisseur', __DIR__);
         return view('Modules_Entite_Fournisseur::FournisseurObjectView');
     }
 }

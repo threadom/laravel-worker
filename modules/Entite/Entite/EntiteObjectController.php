@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class EntiteObjectController extends Controller
 {
     public function index() {
-        view()->addNamespace('Modules_Entite_Entite', app_path(__dir__));
+        view()->addNamespace('Modules_Entite_Entite', __DIR__);
         return view('Modules_Entite_Entite::EntiteObjectView');
     }
 }

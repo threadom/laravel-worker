@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class TemplateObjectController extends Controller
 {
     public function index() {
-        view()->addNamespace('Modules_Module_Submodule', app_path(__dir__));
+        view()->addNamespace('Modules_Module_Submodule', __DIR__);
         return view('Modules_Module_Submodule::TemplateObjectView');
     }
 }

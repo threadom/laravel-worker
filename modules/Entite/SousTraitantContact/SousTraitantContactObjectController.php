@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class SousTraitantContactObjectController extends Controller
 {
     public function index() {
-        view()->addNamespace('Modules_Entite_SousTraitantContact', app_path(__dir__));
+        view()->addNamespace('Modules_Entite_SousTraitantContact', __DIR__);
         return view('Modules_Entite_SousTraitantContact::SousTraitantContactObjectView');
     }
 }

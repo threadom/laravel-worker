@@ -1,9 +1,10 @@
 <?php
 
-namespace module\Module;
+namespace Modules\Accueil;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Modules\Accueil\Accueil\AccueilObjectController;
 
 // -- Object Controller Section
 // use Modules\Module\Submodule\TemplateObjectController;
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 // -- List Controller Section
 // use Modules\Module\Submodule\TemplateListController;
 
-class TemplateRoutes
+class AccueilRoutes
 {
     static public function ObjectsControllersRoutes() {
         /*
@@ -30,6 +31,7 @@ class TemplateRoutes
 
         // -- Object Controller Section
         // Route::get('/Module/Submodule', [TemplateObjectController::class, 'index']);
+        Route::get('/', [AccueilObjectController::class, 'index']);
     }
 
     static public function ObjectsAPIsRoutes() {
