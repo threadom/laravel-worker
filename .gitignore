@@ -26,3 +26,7 @@
 !modules/*/*
 !modules/*/*/*
 !modules/*/*/*/*
+!routes
+!routes/api.php
+!routes/web.php
+!composer.json
