@@ -19,6 +19,8 @@ function make_object($p_dir, $p_argv)
         create_object_file($submodule_dir, 'Controller', '.php', $l_split[0], $l_split[1]);
         create_object_file($submodule_dir, 'View', '.blade.php', $l_split[0], $l_split[1]);
         create_object_file($submodule_dir, 'Script', '.ts', $l_split[0], $l_split[1]);
+
+        echo "\033[42;30m " . 'worker : make:object done.' . " \033[0m\r\n";
     } else {
         echo "\033[41;30m " . 'worker : module/submodule syntax error.' . " \033[0m\r\n";
     }

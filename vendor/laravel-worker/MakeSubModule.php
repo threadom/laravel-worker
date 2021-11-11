@@ -19,20 +19,26 @@ function make_submodule($p_dir, $p_argv)
                 if (!file_exists($submodule_dir)) {
                     mkdir($submodule_dir);
 
-                    if (strtolower($l_argv[1]) == '--object') {
+                    if (in_array('--object', $l_argv)) {
                         make_object($p_dir, $l_argv);
                     }
-                    if (strtolower($l_argv[1]) == '--list') {
+                    if (in_array('--list', $l_argv)) {
                         make_list($p_dir, $l_argv);
                     }
-                    
-                    echo "\033[42;30m " . 'worker : done.' . " \033[0m\r\n";
+
+                    echo "\033[42;30m " . 'worker : make:submodule done.' . " \033[0m\r\n";
                 } else {
                     if (is_dir($submodule_dir)) {
-                        echo "\033[41;30m " . 'worker : submodule folder "' . $l_split[1] . '" already exist in module "'.$l_split[0].'".' . " \033[0m\r\n";
+                        echo "\033[41;30m " . 'worker : submodule folder "' . $l_split[1] . '" already exist in module "' . $l_split[0] . '".' . " \033[0m\r\n";
 
-                        make_object($p_dir, $l_argv);
-                        echo "\033[42;30m " . 'worker : done.' . " \033[0m\r\n";
+                        if (in_array('--object', $l_argv)) {
+                            make_object($p_dir, $l_argv);
+                        }
+                        if (in_array('--list', $l_argv)) {
+                            make_list($p_dir, $l_argv);
+                        }
+                        
+                        echo "\033[42;30m " . 'worker : make:submodule done.' . " \033[0m\r\n";
                     } else {
                         echo "\033[41;30m " . 'worker : submodule "' . $l_split[1] . '" is not a folder.' . " \033[0m\r\n";
                     }
