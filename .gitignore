@@ -17,10 +17,10 @@
 !vendor/laravel-worker/templates/object
 !vendor/laravel-worker/templates/object/*
 !test.bat
-!test
-!test/*
-!test/*/*
-!test/*/*/*
+!config
+!config/modules/*
+!config/modules/*/*
+!config/modules/*/*/*
 !modules
 !modules/*
 !modules/*/*

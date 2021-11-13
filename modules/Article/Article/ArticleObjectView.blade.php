@@ -1,0 +1,1 @@
+<script src="{{ asset('js/'.$module.'_'.$submodule.'ObjectScript.js') }}"></script>

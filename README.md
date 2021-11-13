@@ -11,6 +11,31 @@ Worker come with a new folders and files structures for modulables applications.
 
 ## Installation
 
+### Require
+
+#### To use TypeScript files :
+
+Install typescript and ts-loader
+> <pre>npm install -D typescript</pre>
+> <pre>npm install -D ts-loader</pre>
+
+Create a tsconfig.json file at root directory.
+<pre>{
+  "compilerOptions": {
+    "outDir": "public/js",
+    "target": "es5",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "strict": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true
+  }
+}</pre>
+
+###
+
 Add "modules" folder to composer.json for adding classes to autoload
 <pre>
 ...

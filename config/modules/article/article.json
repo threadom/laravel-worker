@@ -1,5 +1,4 @@
 {
-    "route": "/article",
     "fields": {
         "id_article": "number|autoincrement",
         "libelle": "string|128",
