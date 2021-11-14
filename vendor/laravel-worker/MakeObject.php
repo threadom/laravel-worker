@@ -34,14 +34,22 @@ function create_object_file($p_dir, $p_type, $p_extension, $p_module, $p_submodu
 
         $lines = file_get_contents($file_dir);
 
-        $lines = str_replace('\\Module\\', '\\'.$p_module.'\\',  $lines);
-        $lines = str_replace('\\Submodule\\', '\\'.$p_submodule.'\\',  $lines);
-        $lines = str_replace('\\Submodule;', '\\'.$p_submodule.';',  $lines);
-        $lines = str_replace('TemplateObject', $p_submodule.'Object',  $lines);
-        $lines = str_replace('templates', strtolower($p_submodule).'s',  $lines);
-        $lines = str_replace('_Module_', '_'.$p_module.'_',  $lines);
-        $lines = str_replace('_Submodule\'', '_'.$p_submodule.'\'',  $lines);
-        $lines = str_replace('_Submodule::', '_'.$p_submodule.'::',  $lines);
+        $lines = str_replace('\\Module\\', '\\' . $p_module . '\\',  $lines);
+        $lines = str_replace('\\Submodule\\', '\\' . $p_submodule . '\\',  $lines);
+        $lines = str_replace('\\Submodule;', '\\' . $p_submodule . ';',  $lines);
+        $lines = str_replace('TemplateObject', $p_submodule . 'Object',  $lines);
+        $lines = str_replace('templates', strtolower($p_submodule) . 's',  $lines);
+        $lines = str_replace('_Module_', '_' . $p_module . '_',  $lines);
+        $lines = str_replace('_Submodule\'', '_' . $p_submodule . '\'',  $lines);
+        $lines = str_replace('_Submodule::', '_' . $p_submodule . '::',  $lines);
+        $lines = str_replace('{MODULE}', $p_module,  $lines);
+        $lines = str_replace('{SUBMODULE}', $p_submodule,  $lines);
+
+        $json = loadConfig($p_dir, $p_module, $p_submodule);
+
+        $lines = str_replace('{TITLE}', $json['title'],  $lines);
+        $lines = str_replace('{THEME}', $json['theme'],  $lines);
+        $lines = str_replace('{TEMPLATE}', $json['template'],  $lines);
 
         file_put_contents($file_dir, $lines);
     } else {
@@ -49,3 +57,16 @@ function create_object_file($p_dir, $p_type, $p_extension, $p_module, $p_submodu
     }
 }
 
+function loadConfig($p_dir, $module, $submodule)
+{
+    $config_dir = $p_dir . '/config/modules/' . $module . '/' . $submodule . '.json';
+    $config = json_decode('{
+        "title":"default",
+        "theme":"default",
+        "template":"default"
+    }', true);
+    if (file_exists($config_dir)) {
+        $config = json_decode(file_get_contents($config_dir), true);
+    }
+    return $config;
+}

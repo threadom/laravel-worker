@@ -1,4 +1,5 @@
 rmdir /S /Q .\modules\
+rmdir /S /Q .\resources\views\modules\
 
 php worker make:module Accueil --object --list --model="/config/modules/accueil/accueil.json"
 php worker make:routes Accueil

@@ -14,6 +14,10 @@ function modules_exist($p_dir)
         copy(__DIR__ . '/templates/routes/ModulesRoutes.json', $p_dir . '/modules/ModulesRoutes.json');
         copy(__DIR__ . '/templates/routes/ModulesRoutes.php', $p_dir . '/modules/ModulesRoutes.php');
     }
+    if (!file_exists($p_dir . '/resources/views/modules/')) {
+        mkdir($p_dir . '/resources/views/modules/');
+        recurse_copy(__DIR__ . '/templates/views/', $p_dir . '/resources/views/modules/');
+    }
     if (is_dir($p_dir . '/modules/')) {
         return true;
     } else {
@@ -47,4 +51,20 @@ function dispatch_command($p_dir, $p_argv)
             echo "\033[41;30m " . 'Worker : Command "' . $p_argv[1] . '" is not defined.' . " \033[0m\r\n";
             break;
     }
+}
+
+function recurse_copy($src, $dst)
+{
+    $dir = opendir($src);
+    @mkdir($dst);
+    while (false !== ($file = readdir($dir))) {
+        if (($file != '.') && ($file != '..')) {
+            if (is_dir($src . '/' . $file)) {
+                recurse_copy($src . '/' . $file, $dst . '/' . $file);
+            } else {
+                copy($src . '/' . $file, $dst . '/' . $file);
+            }
+        }
+    }
+    closedir($dir);
 }

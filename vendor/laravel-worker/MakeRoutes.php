@@ -30,6 +30,38 @@ function make_routes($p_dir, $p_argv)
                         }
                     }
                 }
+
+                $config_dir = $p_dir . '/config/modules/' . $l_argv[0] . '/'. $l_argv[0].'.json';
+                if (file_exists($config_dir)) {
+                    $config = json_decode(file_get_contents($config_dir), true);
+                    if (isset($config['routes'])) {
+                        if (isset($config['routes']['web'])) {
+                            foreach ($config['routes']['web'] as $key => $route) {
+                                $parse_module = explode('/', $route);
+                                $module_dir = $p_dir . '/modules/' . $parse_module[0];
+                                if (is_dir($module_dir.'/'.$parse_module[1].'/')) {
+                                    if (file_exists($module_dir.'/'.$parse_module[1].'/'.$parse_module[1].'ObjectController.php')) {
+                                        $json['WebRoutes'][$key] = '\Modules\\'.$l_argv[0].'\\'.$parse_module[1].'\\'.$parse_module[1].'ObjectController';
+                                    }
+                                    if (file_exists($module_dir.'/'.$parse_module[1].'/'.$parse_module[1].'ListController.php')) {
+                                        $json['WebRoutes'][$key] = '\Modules\\'.$l_argv[0].'\\'.$parse_module[1].'\\'.$parse_module[1].'ListController';
+                                    }
+                                }
+                            }
+                        }
+                        if (isset($config['routes']['api'])) {
+                            foreach ($config['routes']['api'] as $key => $route) {
+                                $parse_module = explode('/', $route);
+                                $module_dir = $p_dir . '/modules/' . $parse_module[0];
+                                if (is_dir($module_dir.'/'.$parse_module[1].'/')) {
+                                    if (file_exists($module_dir.'/'.$parse_module[1].'/'.$parse_module[1].'APIController.php')) {
+                                        $json['APIRoutes'][$key] = '\Modules\\'.$l_argv[0].'\\'.$parse_module[1].'\\'.$parse_module[1].'APIController';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
                 file_put_contents($file_dir, json_encode($json));
                 
                 echo "\033[42;30m " . 'worker : make:route done.' . " \033[0m\r\n";

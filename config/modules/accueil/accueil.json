@@ -1,3 +1,10 @@
 {
-    "route": "/"
+    "routes": {
+        "web" : {
+            "/" : "Accueil/Accueil"
+        }
+    },
+    "title": "welcome",
+    "theme": "default",
+    "template": "welcome"
 }

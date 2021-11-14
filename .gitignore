@@ -16,6 +16,12 @@
 !vendor/laravel-worker/templates/module/*
 !vendor/laravel-worker/templates/object
 !vendor/laravel-worker/templates/object/*
+!vendor/laravel-worker/templates/views
+!vendor/laravel-worker/templates/views/*
+!vendor/laravel-worker/templates/views/*/*
+!vendor/laravel-worker/templates/themes
+!vendor/laravel-worker/templates/themes/default
+!vendor/laravel-worker/templates/themes/default/*
 !test.bat
 !config
 !config/modules/*
@@ -30,3 +36,7 @@
 !routes/api.php
 !routes/web.php
 !composer.json
+!resources
+!resources/views
+!resources/views/modules
+!resources/views/modules/*
