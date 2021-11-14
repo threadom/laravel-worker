@@ -7,6 +7,6 @@ $app_submodule = '{SUBMODULE}';
 @extends('modules.app')
 
 @section('content')
-    @include('modules.themes.{THEME}.{TEMPLATE}');
-    @include('modules.scripts.content');
+    @include('modules.themes.{THEME}.{TEMPLATE}')
+    @include('modules.scripts.content')
 @endsection

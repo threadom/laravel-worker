@@ -7,6 +7,6 @@ $app_submodule = 'Client';
 @extends('modules.app')
 
 @section('content')
-    @include('modules.themes.default.default');
-    @include('modules.scripts.content');
+    @include('modules.themes.default.default')
+    @include('modules.scripts.content')
 @endsection

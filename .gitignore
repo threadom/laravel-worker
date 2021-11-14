@@ -40,3 +40,5 @@
 !resources/views
 !resources/views/modules
 !resources/views/modules/*
+!resources/views/modules/*/*
+!resources/views/modules/*/*/*
