@@ -1,15 +1,15 @@
 <?php
-$app_company = '{COMPANY}';
-$app_name = '{NAME}';
 $app_title = '{TITLE}';
 $app_module = '{MODULE}';
 $app_submodule = '{SUBMODULE}';
 $app_theme = '{THEME}';
+$app_company = 'Laravel';
+$app_name = 'Worker';
+$app_lang = 'fr';
 ?>
 
 @extends('modules.app')
 
-@section('content')
+@section('template')
     @include('themes.'.$app_theme.'.templates.{TEMPLATE}')
-    @include('themes.'.$app_theme.'.scripts.content')
 @endsection

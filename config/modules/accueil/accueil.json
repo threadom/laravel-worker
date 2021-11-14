@@ -4,7 +4,7 @@
             "/" : "Accueil/Accueil"
         }
     },
-    "title": "welcome",
+    "title": "Accueil",
     "theme": "default",
-    "template": "welcome"
+    "template": "dashboard"
 }

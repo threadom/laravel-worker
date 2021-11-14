@@ -11,14 +11,14 @@ function make_object($p_dir, $p_argv)
         $module_dir = $p_dir . '/modules/' . $l_split[0];
         $submodule_dir = $module_dir . '/' . $l_split[1];
 
-        create_object_file($submodule_dir, 'Migration', '.php', $l_split[0], $l_split[1]);
-        create_object_file($submodule_dir, 'Model', '.php', $l_split[0], $l_split[1]);
-        create_object_file($submodule_dir, 'Seeder', '.php', $l_split[0], $l_split[1]);
-        create_object_file($submodule_dir, 'Factory', '.php', $l_split[0], $l_split[1]);
-        create_object_file($submodule_dir, 'API', '.php', $l_split[0], $l_split[1]);
-        create_object_file($submodule_dir, 'Controller', '.php', $l_split[0], $l_split[1]);
-        create_object_file($submodule_dir, 'View', '.blade.php', $l_split[0], $l_split[1]);
-        create_object_file($submodule_dir, 'Script', '.ts', $l_split[0], $l_split[1]);
+        create_object_file($p_dir, 'Migration', '.php', $l_split[0], $l_split[1]);
+        create_object_file($p_dir, 'Model', '.php', $l_split[0], $l_split[1]);
+        create_object_file($p_dir, 'Seeder', '.php', $l_split[0], $l_split[1]);
+        create_object_file($p_dir, 'Factory', '.php', $l_split[0], $l_split[1]);
+        create_object_file($p_dir, 'API', '.php', $l_split[0], $l_split[1]);
+        create_object_file($p_dir, 'Controller', '.php', $l_split[0], $l_split[1]);
+        create_object_file($p_dir, 'View', '.blade.php', $l_split[0], $l_split[1]);
+        create_object_file($p_dir, 'Script', '.ts', $l_split[0], $l_split[1]);
 
         echo "\033[42;30m " . 'worker : make:object done.' . " \033[0m\r\n";
     } else {
@@ -28,7 +28,7 @@ function make_object($p_dir, $p_argv)
 
 function create_object_file($p_dir, $p_type, $p_extension, $p_module, $p_submodule)
 {
-    $file_dir = $p_dir . '/' . $p_submodule . 'Object' . $p_type . $p_extension;
+    $file_dir = $p_dir . '/modules/' . $p_module . '/' . $p_submodule . '/' . $p_submodule . 'Object' . $p_type . $p_extension;
     if (!file_exists($file_dir)) {
         copy(__DIR__ . '/templates/object/TemplateObject' . $p_type . $p_extension, $file_dir);
 
@@ -46,10 +46,12 @@ function create_object_file($p_dir, $p_type, $p_extension, $p_module, $p_submodu
         $lines = str_replace('{SUBMODULE}', $p_submodule,  $lines);
 
         $json = loadConfig($p_dir, $p_module, $p_submodule);
-
-        $lines = str_replace('{TITLE}', $json['title'],  $lines);
-        $lines = str_replace('{THEME}', $json['theme'],  $lines);
-        $lines = str_replace('{TEMPLATE}', $json['template'],  $lines);
+        if (isset($json['title']))
+            $lines = str_replace('{TITLE}', $json['title'],  $lines);
+        if (isset($json['theme']))
+            $lines = str_replace('{THEME}', $json['theme'],  $lines);
+        if (isset($json['template']))
+            $lines = str_replace('{TEMPLATE}', $json['template'],  $lines);
 
         file_put_contents($file_dir, $lines);
     } else {

@@ -5,6 +5,7 @@
         "reference_interne": "string|64",
         "reference_client": "string|64"
     },
-    "theme": "classic",
-    "template": "form"
+    "title": "Article",
+    "theme": "default",
+    "template": "form_crud"
 }

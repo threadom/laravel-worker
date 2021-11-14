@@ -1,3 +1,4 @@
 <div class="w-full min-h-screen bg-blue-600">
-    @yield('content')
+    @yield('template')
+    @include('themes.'.$app_theme.'.scripts.content')
 </div>
