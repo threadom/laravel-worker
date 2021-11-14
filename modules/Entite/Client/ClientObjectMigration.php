@@ -15,7 +15,7 @@ class ClientObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create(clients, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class ClientObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists(clients);
     }
 }

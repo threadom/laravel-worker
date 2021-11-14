@@ -15,7 +15,7 @@ class SousTraitantObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('soustraitants', function (Blueprint $table) {
+        Schema::create(soustraitants, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class SousTraitantObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('soustraitants');
+        Schema::dropIfExists(soustraitants);
     }
 }

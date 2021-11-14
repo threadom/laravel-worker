@@ -15,7 +15,7 @@ class ClientContactObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('clientcontacts', function (Blueprint $table) {
+        Schema::create(clientcontacts, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class ClientContactObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientcontacts');
+        Schema::dropIfExists(clientcontacts);
     }
 }

@@ -15,7 +15,7 @@ class ClientAdresseLivraisonObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('clientadresselivraisons', function (Blueprint $table) {
+        Schema::create(clientadresselivraisons, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class ClientAdresseLivraisonObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientadresselivraisons');
+        Schema::dropIfExists(clientadresselivraisons);
     }
 }

@@ -15,7 +15,7 @@ class FournisseurContactObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('fournisseurcontacts', function (Blueprint $table) {
+        Schema::create(fournisseurcontacts, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class FournisseurContactObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fournisseurcontacts');
+        Schema::dropIfExists(fournisseurcontacts);
     }
 }

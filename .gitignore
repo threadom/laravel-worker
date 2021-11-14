@@ -22,6 +22,7 @@
 !vendor/laravel-worker/templates/themes
 !vendor/laravel-worker/templates/themes/default
 !vendor/laravel-worker/templates/themes/default/*
+!vendor/laravel-worker/templates/themes/default/*/*
 !test.bat
 !config
 !config/modules/*
@@ -41,4 +42,15 @@
 !resources/views/modules
 !resources/views/modules/*
 !resources/views/modules/*/*
-!resources/views/modules/*/*/*
+!resources
+!resources/views
+!resources/views/themes
+!resources/views/themes/*
+!resources/views/themes/*/*
+!resources/views/themes/*/*/*
+!resources/css
+!resources/css/app.css
+!resources/scss
+!resources/scss/app.scss
+!tailwind.config.js
+!webpack.mix.js

@@ -38,7 +38,7 @@ function create_object_file($p_dir, $p_type, $p_extension, $p_module, $p_submodu
         $lines = str_replace('\\Submodule\\', '\\' . $p_submodule . '\\',  $lines);
         $lines = str_replace('\\Submodule;', '\\' . $p_submodule . ';',  $lines);
         $lines = str_replace('TemplateObject', $p_submodule . 'Object',  $lines);
-        $lines = str_replace('templates', strtolower($p_submodule) . 's',  $lines);
+        $lines = str_replace('\'templates\'', strtolower($p_submodule) . 's',  $lines);
         $lines = str_replace('_Module_', '_' . $p_module . '_',  $lines);
         $lines = str_replace('_Submodule\'', '_' . $p_submodule . '\'',  $lines);
         $lines = str_replace('_Submodule::', '_' . $p_submodule . '::',  $lines);

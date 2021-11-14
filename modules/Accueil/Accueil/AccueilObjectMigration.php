@@ -15,7 +15,7 @@ class AccueilObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('accueils', function (Blueprint $table) {
+        Schema::create(accueils, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class AccueilObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('accueils');
+        Schema::dropIfExists(accueils);
     }
 }

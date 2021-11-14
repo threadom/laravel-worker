@@ -15,7 +15,7 @@ class ClientAdresseFacturationObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('clientadressefacturations', function (Blueprint $table) {
+        Schema::create(clientadressefacturations, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class ClientAdresseFacturationObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientadressefacturations');
+        Schema::dropIfExists(clientadressefacturations);
     }
 }

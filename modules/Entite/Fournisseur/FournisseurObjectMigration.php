@@ -15,7 +15,7 @@ class FournisseurObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('fournisseurs', function (Blueprint $table) {
+        Schema::create(fournisseurs, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class FournisseurObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fournisseurs');
+        Schema::dropIfExists(fournisseurs);
     }
 }

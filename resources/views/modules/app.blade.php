@@ -8,14 +8,12 @@ $app_lang = 'fr';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1920, initial-scale=1.0">
     <title>{{ env('APP_NAME') }} - {{ $app_title }}</title>
-	@include('modules.styles.fonts')
-	@include('modules.styles.header')
-	@include('modules.scripts.header')
+	@include('themes.'.$app_theme.'.styles.fonts')
+	@include('themes.'.$app_theme.'.styles.header')
+	@include('themes.'.$app_theme.'.scripts.header')
 </head>
 <body>
-    <div class="w-full min-h-screen bg-gray-600">
-        @yield('content')
-    </div>
-	@include('modules.scripts.body')
+    @include('themes.'.$app_theme.'.app')
+    @include('themes.'.$app_theme.'.scripts.body')
 </body>
 </html>

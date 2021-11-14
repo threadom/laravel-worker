@@ -15,7 +15,7 @@ class SousTraitantContactObjectMigration extends Migration
      */
     public function up()
     {
-        Schema::create('soustraitantcontacts', function (Blueprint $table) {
+        Schema::create(soustraitantcontacts, function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class SousTraitantContactObjectMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('soustraitantcontacts');
+        Schema::dropIfExists(soustraitantcontacts);
     }
 }

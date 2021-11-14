@@ -17,8 +17,8 @@ function modules_exist($p_dir)
     if (!file_exists($p_dir . '/resources/views/modules/')) {
         mkdir($p_dir . '/resources/views/modules/');
         recurse_copy(__DIR__ . '/templates/views/', $p_dir . '/resources/views/modules/');
-        mkdir($p_dir . '/resources/views/modules/themes/');
-        recurse_copy(__DIR__ . '/templates/themes/', $p_dir . '/resources/views/modules/themes/');
+        mkdir($p_dir . '/resources/views/themes/');
+        recurse_copy(__DIR__ . '/templates/themes/', $p_dir . '/resources/views/themes/');
     }
     if (is_dir($p_dir . '/modules/')) {
         return true;

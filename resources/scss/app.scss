@@ -1,0 +1,78 @@
+img.icon {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    background-size: contain;
+    cursor: pointer;
+}
+.icon.filterBy {
+    float: left;
+    background-image: url("/images/filterBY.png");
+}
+.icon.sortBy {
+    float: right;
+    background-image: url("/images/sortASC.png");
+}
+tr:nth-child(even) div.editable {
+    background-color: hsl(45, 50%, 90%);
+}
+tr:nth-child(odd) div.editable {
+    background-color: hsl(45, 50%, 85%);
+}
+tr:nth-child(even) div.editing {
+    background-color: hsl(160, 75%, 85%);
+}
+tr:nth-child(odd) div.editing {
+    background-color: hsl(160, 75%, 80%);
+}
+div.readable {
+    user-select: none;
+    cursor: not-allowed;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 12.5rem;
+    min-width: 2.5rem;
+    text-overflow: ellipsis;
+}
+div.editable {
+    user-select: none;
+    cursor: pointer;
+}
+div.editing {
+    cursor: text;
+}
+button {
+    transition: background-color 250ms ease 250ms;
+}
+div.progress div {
+    transition: width 100ms ease 100ms;
+}
+div#lock {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background:  repeating-linear-gradient(
+        -45deg,
+        hsla(0,0%,17%,0.52),
+        hsla(0,0%,17%,0.52) 10px,
+        hsla(0,0%,13%,0.48) 10px,
+        hsla(0,0%,13%,0.48) 20px
+      );
+    top: 0;
+    left: 0;
+    display: table-cell;
+}
+div#lock .message {
+    margin: auto;
+    width:  100px;
+    height: 100px;
+    background-color: white;
+    background-image: url('/images/gears.gif');
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 25%
+}
