@@ -9,7 +9,7 @@
             <div class="inline-block float-right align-middle justify-center text-sm font-medium h-10 leading-10">
                 <div class="flex">
                     <a href="#create" class="inline-block bg-btn-create">
-                        <img class="lg:inline m-1 h-8 w-8 align-top text-" src="/app.png">
+                        <img class="lg:inline m-1 h-8 w-8 align-top " src="/app.png">
                     </a>
                     <a href="#read" class="inline-block bg-btn-read">
                         <img class="lg:inline m-1 h-8 w-8 align-top" src="/app.png">
