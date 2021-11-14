@@ -8,16 +8,16 @@ php worker make:routes Accueil
 php worker make:module Article --object --list --model="/config/modules/article/article.json"
 php worker make:routes Article
 
-php worker make:module Entite --object --list --model="/config/modules/entite/entite.json"
-php worker make:module Entite/Client --object --list --model="/config/modules/entite/client.json"
-php worker make:module Entite/ClientContact --object --list --model="/config/modules/entite/client_contact.json"
-php worker make:module Entite/ClientAdresseFacturation --object --list --model="/config/modules/entite/client_adresse_facturation.json"
-php worker make:module Entite/ClientAdresseLivraison --object --list --model="/config/modules/entite/client_adresse_livraison.json"
-php worker make:module Entite/Fournisseur --object --list --model="/config/modules/entite/fournisseur.json"
-php worker make:module Entite/FournisseurContact --object --list --model="/config/modules/entite/fournisseur_contact.json"
-php worker make:module Entite/SousTraitant --object --list --model="/config/modules/entite/soustraitant.json"
-php worker make:module Entite/SousTraitantContact --object --list --model="/config/modules/entite/soustraitant_contact.json"
-php worker make:routes Entite
+@REM php worker make:module Entite --object --list --model="/config/modules/entite/entite.json"
+@REM php worker make:module Entite/Client --object --list --model="/config/modules/entite/client.json"
+@REM php worker make:module Entite/ClientContact --object --list --model="/config/modules/entite/client_contact.json"
+@REM php worker make:module Entite/ClientAdresseFacturation --object --list --model="/config/modules/entite/client_adresse_facturation.json"
+@REM php worker make:module Entite/ClientAdresseLivraison --object --list --model="/config/modules/entite/client_adresse_livraison.json"
+@REM php worker make:module Entite/Fournisseur --object --list --model="/config/modules/entite/fournisseur.json"
+@REM php worker make:module Entite/FournisseurContact --object --list --model="/config/modules/entite/fournisseur_contact.json"
+@REM php worker make:module Entite/SousTraitant --object --list --model="/config/modules/entite/soustraitant.json"
+@REM php worker make:module Entite/SousTraitantContact --object --list --model="/config/modules/entite/soustraitant_contact.json"
+@REM php worker make:routes Entite
 
 @REM php worker make:module Ressource --object --list --model="/config/modules/achat/achat.json"
 @REM php worker make:module Ressource/Matiere --object --list --model="/config/modules/achat/matiere.json"

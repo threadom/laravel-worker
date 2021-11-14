@@ -15,14 +15,21 @@ module.exports = {
         600: 'hsl(210,35%,40%)',
         700: 'hsl(210,30%,30%)',
         800: 'hsl(210,25%,20%)',
-        900: 'hsl(210,20%,10%)'
+        900: 'hsl(210,20%,10%)',
       },
+      btn: {
+        update: 'hsl(140,75%,75%)',
+        read: 'hsl(210,75%,75%)',
+        create: 'hsl(70,75%,75%)',
+        delete: 'hsl(0,75%,75%)',
+      }
     },
     extend: {},
   },
   variants: {
     extend: {
-      backgroundColor: ['even','odd'],
+      backgroundColor: ['even','odd','disabled'],
+      textColor: ['disabled'],
     },
   },
   plugins: [],
