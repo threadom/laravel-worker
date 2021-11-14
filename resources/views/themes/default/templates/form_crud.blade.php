@@ -1,6 +1,6 @@
 @include('themes.'.$app_theme.'.partials.topbar')
-<div class="p-3 w-full h-full">
-    <div class="grid w-full h-full bg-blue-500 rounded-md overflow-hidden">
+<div class="p-2 w-full h-full">
+    <div class="grid w-full h-full bg-blue-500 overflow-hidden">
         <div class="inline-block w-full bg-blue-400 pl-4 h-10">
             <div class="inline-block float-left align-middle justify-center text-sm font-medium h-10 leading-10">
                 <a href="#" class="text-blue-50 align-middle font-medium whitespace-nowrap">Article
@@ -25,18 +25,18 @@
         </div>
         <div class="p-2">
             <form>
-                <div class='inline-grid bg-blue-400 rounded-sm p-2'>
-                    <fieldset class='bg-blue-300 h-10 inline-block rounded-sm'>
-                        <label class='m-3 h-4' for="id_article">Référence Interne :</label>
-                        <input class='m-2 h-6 bg-blue-200 rounded-sm text-right' disabled type="text" name="ref_interne" id="ref_interne">
+                <div class='inline-grid bg-blue-400 p-1'>
+                    <fieldset class='bg-blue-300 h-10 inline-block'>
+                        <label class='m-2 h-6 w-32' for="id_article">Référence Interne :</label>
+                        <input class='m-2 h-6 w-32 bg-blue-200 text-right' disabled type="text" name="ref_interne" id="ref_interne">
                     </fieldset>
-                    <fieldset class='bg-blue-300 h-10 inline-block rounded-sm'>
-                        <label class='m-3 h-4' for="id_article">Désignation :</label>
-                        <input class='m-2 h-6 bg-blue-200 rounded-sm text-center' disabled type="text" name="designation" id="designation">
+                    <fieldset class='bg-blue-300 h-10 inline-block'>
+                        <label class='m-2 h-6 w-32' for="id_article">Désignation :</label>
+                        <input class='m-2 h-6 w-64 bg-blue-200 text-center' disabled type="text" name="designation" id="designation">
                     </fieldset>
-                    <fieldset class='bg-blue-300 h-10 inline-block rounded-sm'>
-                        <label class='m-3 h-4' for="id_article">Référence Client :</label>
-                        <input class='m-2 h-6 bg-blue-200 rounded-sm text-right' disabled type="text" name="ref_client" id="ref_client">
+                    <fieldset class='bg-blue-300 h-10 inline-block'>
+                        <label class='m-2 h-6 w-32' for="id_article">Référence Client :</label>
+                        <input class='m-2 h-6 w-48 bg-blue-200 text-right' disabled type="text" name="ref_client" id="ref_client">
                     </fieldset>
                 </div>
             </form>
